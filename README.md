@@ -20,3 +20,9 @@ We want to offer a deeper analysis to investors and community on the growth tren
 -       Healthy Ride (Pittsburgh)
 -       Divvy Bikes (Chicago)
 -       Climate Information: < https://developer.accuweather.com/>, < https://www.ncdc.noaa.gov/cdo-web/search>
+## Questions to answers:
+-       Who are the main users of PBS and why?
+-       What are the important factors that cause high demand of PBS in certain city/area/time period?
+-       Are there any factors that cause negative impact on the growth of PBS in city? (weather, location of bick docks, etc…)
+## Role Definition
+The team has found a natural work dynamic. We will be taking advantage of the already used channels, such as slack and zoom website.
