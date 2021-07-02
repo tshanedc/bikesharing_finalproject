@@ -33,7 +33,6 @@ The team has found a natural work dynamic. We will be taking advantage of the al
 ## Methodology
 
 -       We will use Visualization using Tableau and R. 
--       We are also thinking about using multivariate regression to identify which factor are affecting the PBS. Or RANDOM Forest Model to predict the availability of bikes in the station.......
 
 ## Provisional Model for Machine Learning
 
