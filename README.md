@@ -27,5 +27,7 @@ We want to offer a deeper analysis to investors and community on the growth tren
 ## Role Definition
 The team has found a natural work dynamic. We will be taking advantage of the already used channels, such as slack and zoom website.
 ## Methodology/ML Model
-•	We will use Visualization using Tableau and R. 
-•	We are also thinking about using multivariate regression to identify which factor are affecting the PBS. Or RANDOM Forest Model to predict the availability of bikes in the station.......
+
+
+-       We will use Visualization using Tableau and R. 
+-       We are also thinking about using multivariate regression to identify which factor are affecting the PBS. Or RANDOM Forest Model to predict the availability of bikes in the station.......
