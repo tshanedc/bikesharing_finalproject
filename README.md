@@ -1,6 +1,6 @@
 # bikesharing_finalproject
 
-# Group Members
+## Group Members
 
 Team 5: Thomas Shane, Paola Escamilla, Takuma Koide, Habtamu Tikuye, Mair Manson, Derrick Amegashie
 
