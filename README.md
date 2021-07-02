@@ -1,7 +1,11 @@
 # bikesharing_finalproject
 
+# Group Members
+
+Team 5: Thomas Shane, Paola Escamilla, Takuma Koide, Habtamu Tikuye, Mair Manson, Derrick Amegashie
 
 ## Selected Topic:
+
 An Analysis of Public Bike Sharing (PBS) Services to uncover growing trends for potential business expansion
 
 ## Reasons for selecting Topic:
