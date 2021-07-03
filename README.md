@@ -33,11 +33,11 @@ We want to offer a deeper analysis to investors and community on the growth tren
 The team has found a natural work dynamic. We will be taking advantage of the already used channels, such as slack and zoom website.
 ## Methodology
 We will use Visualization using Tableau and R. The model this project uses to analyse bikesharing investment across different cities of the US is **multivariate linear regression or OLS(Ordinary least square)**
-**Y=M+BX**
-Y: represents the dependent variable PBS(public bike sharing)
-M: is the intercept 
-B: is the slope
-X: represents vector of independent variables.
+- **Y=M+BX**
+- Y: represents the dependent variable PBS(public bike sharing)
+- M: is the intercept 
+- B: is the slope, and
+- X: represents vector of independent variables.
 
 Below image shows the mock conceptual relationship of the databases across cities 
 
