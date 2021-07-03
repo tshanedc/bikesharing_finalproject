@@ -38,3 +38,6 @@ The team has found a natural work dynamic. We will be taking advantage of the al
 
 - Run a series of regression on correlation between the factors such as weather, seasonality, characteristics of area (office, leisure, academic, etc…) with the usage of PBS.
 - Visualize the maps of each city and  show popular routes. Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes.
+## Database
+This project uses a data from CitiBike and BlueBike databases. The main parameters the project investagtes are *Duration of bike, subscription, age, sex, weather...*. These variables will show us how worth investing in the Bikesharing Business and  where to invest it.
+
