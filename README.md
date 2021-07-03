@@ -1,3 +1,4 @@
+
 # bikesharing_finalproject
 
 ## Group Members
@@ -39,6 +40,8 @@ B: is the slope
 X: represents vector of independent variables.
 
 Below image shows the mock conceptual relationship of the databases across cities 
+
+![ConceptualERD-export](https://user-images.githubusercontent.com/78656720/124362240-c9951200-dc01-11eb-88fb-67bad7efb827.png)
 
 
 ## Provisional Model for Machine Learning
