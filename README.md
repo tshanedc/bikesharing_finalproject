@@ -48,4 +48,4 @@ Below image shows the mock conceptual relationship of the databases across citie
 ## Provisional Model for Machine Learning
 
 - Run a series of regression on correlation between the factors such as weather, seasonality, characteristics of area (office, leisure, academic, etc…) with the usage of PBS.
-- Visualize the maps of each city and  show popular routes. Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes.
+- Visualize the maps of each city and  show popular routes. Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that route.
