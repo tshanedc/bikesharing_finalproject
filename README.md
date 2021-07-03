@@ -39,7 +39,8 @@ We will use Visualization using Tableau and R. The model this project uses to an
 - B: is the slope, and
 - X: represents vector of independent variables.
 
-Below image shows the mock conceptual relationship of the databases across cities 
+Below image shows the mock conceptual relationship of the databases across cities and the main variables we are going to analyse whether they affect the PBS positively or negativley and their significance aswell. The result will give an insight if we have to recommend the stakeholder to invest on PBS or not and where to invest it.
+
 
 ![ConceptualERD-export](https://user-images.githubusercontent.com/78656720/124362240-c9951200-dc01-11eb-88fb-67bad7efb827.png)
 
