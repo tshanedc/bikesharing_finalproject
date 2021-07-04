@@ -31,13 +31,26 @@ We want to offer a deeper analysis to investors and community on the growth tren
 ## Role Definition
 The team has found a natural work dynamic. We will be taking advantage of the already used channels, such as slack and zoom website.
 ## Methodology
+We will use Visualization using Tableau and R. The model this project uses to analyse bikesharing investment across different cities of the US is **multivariate linear regression or OLS(Ordinary least square)**
+- **Y=M+BX**
+- Y: represents the dependent variable PBS(public bike sharing)
+- M: is the intercept 
+- B: is the slope, and
+- X: represents vector of independent variables.
 
-- We will use Visualization using Tableau and R. 
+Below image shows the mock conceptual relationship of the databases across cities and the main variables we are going to analyse whether they affect the PBS positively or negativley and their significance aswell. The result will give an insight if we have to recommend the stakeholder to invest on PBS or not and where to invest it.
+
+
+![ConceptualERD-export](https://user-images.githubusercontent.com/78656720/124362240-c9951200-dc01-11eb-88fb-67bad7efb827.png)
+
 
 ## Provisional Model for Machine Learning
 
 - Run a series of regression on correlation between the factors such as weather, seasonality, characteristics of area (office, leisure, academic, etc…) with the usage of PBS.
-- Visualize the maps of each city and  show popular routes. Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes.
+- Visualize the maps of each city and  show popular routes. Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that route.
+
+
+
 ## Database
 This project uses a data from CitiBike and BlueBike databases. The main parameters the project investagtes are *Duration of bike, subscription, age, sex, weather...*. These variables will show us how worth investing in the Bikesharing Business and  where to invest it.
 
