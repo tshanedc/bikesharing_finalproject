@@ -6,13 +6,19 @@ Thomas Shane, Paola Escamilla, Takuma Koide, Habtamu Tikuye, Mair Manson & Derri
 
 ### Content
 - Topic:
-An Analysis of Public Bike Sharing Services to uncover growing trends for potential business expansion
+An Analysis of Public Bike Sharing Services, between two cities and over a period of time, to uncover trends for potential investment.
 
 - Reasons for Topic Selection:
-We want to offer a deeper analysis to investors and community on the growth trends of Public Bike Sharing Services in order to motivate investors to expand the business and increase trust from community to their usage
+We want to offer a deeper analysis to involved stakeholders on the trends of Public Bike Sharing Services between two different cities to motivate encourage investment in order to expand the business
 
 - Description of source data
-We will be using datasources from CitiBike, BlueBikes and we are searching for census data about commutes (such as gender, age, occupation, type of using, etc)
+We will be using datasources from:
+https://developer.accuweather.com/
+https://www.ncdc.noaa.gov/cdo-web/search
+U.S census data
+
+<img width="974" alt="image" src="https://user-images.githubusercontent.com/78698456/124485651-cc674280-dd7a-11eb-9d1d-6ce7b50363af.png">
+
 
 - Analysis Questions:
 What is the growth trend in the past 10 years?
@@ -25,9 +31,13 @@ The team has found a natural work dynamic. We will be taking advantage of the al
 
 ### Machine Learning Model 
 Provisional Model
--Visualize the map data, heat map of users, run analysis on how start location/end location of bike travel may change by the time of the day/weekday or weekend to assess the purpose of the bike rides by users.
--Visualize the trend in the usage of bike sharing that shows strong spike in certain time period, weekday vs. weekend, gender, location of bike stations, and overall change in trend/grown in users in the past 10 years to identify the how these bike sharing services are evolving in the major cities.
+We will use Visualization using Tableau and R. Visualize the maps of each city and show popular routes. Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes
+We are also thinking about multivariate regression to identify which factor are affecting the PBS. Or random forest model to predict the availability of bikes in the stations
 
 ### Database Integration
+
+<img width="997" alt="image" src="https://user-images.githubusercontent.com/78698456/124485903-0a646680-dd7b-11eb-9b3d-5a99f64c173e.png">
+
+
 
 
