@@ -21,7 +21,10 @@ U.S census data
 
 
 - Analysis Questions:
-What is the growth trend in the past 10 years?
+What is the growth trend in a specific range of years?
+Who are the main users of PBO?
+What are the important factors that cause high demand of PBS in certain city/area/time/period?
+Are there any factors that cause negative impact on the growthof PBS in the city?(weather, location of bick docks etc)
 
 ### Communication Protocol
 The protocol is still in progress. However, we will rely our communication on two components (1) follow up meetings and (2) work distribution.
@@ -31,8 +34,8 @@ The team has found a natural work dynamic. We will be taking advantage of the al
 
 ### Machine Learning Model 
 Provisional Model
-We will use Visualization using Tableau and R. Visualize the maps of each city and show popular routes. Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes
-We are also thinking about multivariate regression to identify which factor are affecting the PBS. Or random forest model to predict the availability of bikes in the stations
+Run a series of regression on correlation between the factors such as weather, seasonality, characteristics of area (office, leisure, academic, etc…) with the usage of PBS.
+Visualize the maps of each city and  show popular routes. Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes.
 
 ### Database Integration
 
