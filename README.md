@@ -7,8 +7,7 @@ Team 5: Thomas Shane, Paola Escamilla, Takuma Koide, Habtamu Tikuye, Mair Manson
 
 ## Selected Topic:
 
-
-An Analysis of Public Bike Sharing (PBS) Services to uncover growing trends for potential business expansion. And also analyzing bike share data from DC to help us make a predicted forecast of which areas (zip codes) to focus are marketing strategies/invest in.
+An Analysis of Public Bike Sharing (PBS) Services to uncover growing trends for potential business expansion which would help and allow investors/companies to make strategic decisions. Such as opening the next station, acquiring more bikes, allocating more bikes based on demand.
 
 
 
