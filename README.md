@@ -53,8 +53,7 @@ This project is going to use **ARIMA model** to predict the next station that th
 - t-1: is laged period
 We are going to use time series data and predict where is the best location to to open the next station.
 
-Below image shows the mock conceptual relationship of the databases across cities and the main variables we are going to analyse whether they affect the PBS positively or negativley and their significance aswell. The result will give an insight if we have to recommend the stakeholder to invest on PBS or not and where to invest it.
-
+Below image shows the mock conceptual relationship of the databases across cities and the main variables we are going to analyse whether they affect the PBS positively or negativley and their significance aswell. The result will give an insight if we have to recommend to the stakeholder to invest on PBS or not, where to invest it and specific strategic decisions to take.
 
 ![ConceptualERD-export](https://user-images.githubusercontent.com/78656720/124362240-c9951200-dc01-11eb-88fb-67bad7efb827.png)
 
