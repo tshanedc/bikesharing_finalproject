@@ -65,9 +65,6 @@ Below image shows the mock conceptual relationship of the databases across citie
 
 The group communicates regularly over slack, sharing ideas and datasets as well as discussing next steps. Additionally, the group utilizes Zoom to meet outside of class hours. 
 
-## Methodology
-
-- We will use Visualization using Tableau and R. 
 
 ## Provisional Model for Machine Learning
 
