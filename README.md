@@ -7,7 +7,7 @@ Team 5: Thomas Shane, Paola Escamilla, Takuma Koide, Habtamu Tikuye, Mair Manson
 
 ## Selected Topic:
 
-An Analysis of Public Bike Sharing (PBS) Services to uncover growing trends for potential business expansion
+An Analysis of Public Bike Sharing (PBS) Services to uncover growing trends for potential business expansion. And also analyzing bike share data from DC to help us make a predicted forecast of which areas (zip codes) to focus are marketing strategies/invest in.
 
 ## Reasons for selecting Topic:
 
@@ -19,6 +19,8 @@ We want to offer a deeper analysis to investors and community on the growth tren
 -       Popular / Unpopular routes
 -       Weekday / Weekend comparison
 -       Time of the day analysis
+-       Zipcode
+-       location coardinates
 ## Description of sources for Project:
 -       CitiBike (NYC)
 -       BlueBikes (Boston)
@@ -32,12 +34,16 @@ We want to offer a deeper analysis to investors and community on the growth tren
 ## Role Definition
 The team has found a natural work dynamic. We will be taking advantage of the already used channels, such as slack and zoom website.
 ## Methodology
-We will use Visualization using Tableau and R. The model this project uses to analyse bikesharing investment across different cities of the US is **multivariate linear regression or OLS(Ordinary least square)**
-- **Y=M+BX**
-- Y: represents the dependent variable PBS(public bike sharing)
-- M: is the intercept 
-- B: is the slope, and
-- X: represents vector of independent variables.
+We will use Visualization using Tableau and R. 
+This project is going to use **ARIMA model** to predict the next station that the invester is going to open
+
+- **Ŷt = μ + ϕ1Yt-1**
+- - Y: represents the dependent variable PBS(public bike sharing)
+- μ: is the intercept 
+- ϕ: is the slope, and
+- t-1: is laged period
+We are going to use time series data and predict where is the best location to to open the next station.
+
 
 Below image shows the mock conceptual relationship of the databases across cities and the main variables we are going to analyse whether they affect the PBS positively or negativley and their significance aswell. The result will give an insight if we have to recommend the stakeholder to invest on PBS or not and where to invest it.
 
