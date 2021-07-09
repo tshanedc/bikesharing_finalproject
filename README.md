@@ -9,13 +9,9 @@ We want to offer a deeper analysis to investors and community on the growth tren
 ·      Weekday/Weekend Comparison
 ·      Time of day analysis
 ## DESCRIPTION OF SOURCE DATA
-We will be using datasources from CitiBike, BlueBikes and we are searching for census data about commutes (such as gender, age, occupation, type of using, etc)
+We will be using datasources from Capitol Bikshare tripdata datasets to analyze the growth of its business through the number of trips taken, locations of bike stops, and membership ratio of users.
 ### BikeSharing Data:
-·      Citebike (NYC)
-·      BlueBikes (Boston)
-·      Healthy Ride (Pittsburgh)
-·      Divvybikes (Chicago)
- 
+·      Capitol Bikshare (Washington D.C.) from 2010 - 05/2021
 ### Climate Information:
 https://developer.accuweather.com/
 https://www.ncdc.noaa.gov/cdo-web/search
