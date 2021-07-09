@@ -12,12 +12,10 @@ An Analysis of Public Bike Sharing Services, between two cities and over a perio
 We want to offer a deeper analysis to involved stakeholders on the trends of Public Bike Sharing Services between two different cities to motivate encourage investment in order to expand the business
 
 - Description of source data
-We will be using datasources from:
-https://developer.accuweather.com/
-https://www.ncdc.noaa.gov/cdo-web/search
-U.S census data
+We will be using csv data files from the source:
+https://s3.amazonaws.com/capitalbikeshare-data/index.html
 
-<img width="974" alt="image" src="https://user-images.githubusercontent.com/78698456/124485651-cc674280-dd7a-11eb-9d1d-6ce7b50363af.png">
+<img width="683" alt="image" src="https://user-images.githubusercontent.com/78698456/125142377-919c3c00-e0e5-11eb-8514-6d58a4da44b9.png">
 
 
 - Analysis Questions:
