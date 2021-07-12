@@ -15,8 +15,8 @@ We will be using datasources from Capitol Bikshare tripdata datasets to analyze 
 ·      Capitol Bikshare (Washington D.C.) from 2010 - 05/2021 
 `<https://s3.amazonaws.com/capitalbikeshare-data/index.html>`
 ### Climate Information:
-https://developer.accuweather.com/
-https://www.ncdc.noaa.gov/cdo-web/search
+- https://developer.accuweather.com/
+- https://www.ncdc.noaa.gov/cdo-web/search
 ### Census Data:
 ·      U.S census data (Information around gender, occupation, age , type of usage)
 ## QUESTIONS TO ANSWER
