@@ -3,12 +3,12 @@ An Analysis of Public Bike Sharing Services to uncover growing trends for potent
 ## REASONS FOR SELECTING TOPIC
 We want to offer a deeper analysis to investors and community on the growth trends of Public Bike Sharing Services in order to motivate investors to expand the business and increase trust from community to their usage
 ## VARIABLES TO CONSIDER
--      Location of Bike Station (Latitude, Longitude, and Zip code)
--      Member and Casual user types 
--      Popular and Unpopular Bike routes
-·      Weather
-·      Weekday and Weekend User number 
-·      Time of day analysis
+- Location of Bike Station (Latitude, Longitude, and Zip code)
+- Member and Casual user types 
+- Popular and Unpopular Bike routes
+- Weather
+- Weekday and Weekend User number 
+- Time of day analysis
 ## DESCRIPTION OF SOURCE DATA
 We will be using datasources from Capitol Bikshare tripdata datasets to analyze the growth of its business through the number of trips taken, locations of bike stops, and membership ratio of users.
 ### BikeSharing Data:
