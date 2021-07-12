@@ -12,7 +12,8 @@ We want to offer a deeper analysis to investors and community on the growth tren
 ## DESCRIPTION OF SOURCE DATA
 We will be using datasources from Capitol Bikshare tripdata datasets to analyze the growth of its business through the number of trips taken, locations of bike stops, and membership ratio of users.
 ### BikeSharing Data:
-·      Capitol Bikshare (Washington D.C.) from 2010 - 05/2021 <https://s3.amazonaws.com/capitalbikeshare-data/index.html>
+·      Capitol Bikshare (Washington D.C.) from 2010 - 05/2021 
+`<https://s3.amazonaws.com/capitalbikeshare-data/index.html>`
 ### Climate Information:
 https://developer.accuweather.com/
 https://www.ncdc.noaa.gov/cdo-web/search
