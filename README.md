@@ -48,7 +48,7 @@ We will use Visualization using Tableau and R.
 This project is going to use **ARIMA model** to predict the next station that the invester is going to open
 
 - **Ŷt = μ + ϕ1Yt-1**
-- - Y: represents the dependent variable PBS(public bike sharing)
+- - Y: represents the dependent variable PBS(Number of station)
 - μ: is the intercept 
 - ϕ: is the slope, and
 - t-1: is laged period
