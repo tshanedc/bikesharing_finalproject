@@ -19,9 +19,7 @@ We will be using datasources from Capital Bike Share website. The website counts
 ### BikeSharing Data:
 - Capital Bikshare (Washington D.C.) from 2010 - 05/2021. Retrieved from: https://s3.amazonaws.com/capitalbikeshare-data/index.html
 - 
-### Weather Information:
-- https://developer.accuweather.com/
-- https://www.ncdc.noaa.gov/cdo-web/search
+
 
 ## QUESTIONS TO ANSWER
 1. What kind of factors influence riders to define their membership type?
