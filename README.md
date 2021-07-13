@@ -1,35 +1,35 @@
+# FINAL PROJECT
+## BIKESHARING SERVICES
+An Analysis of Public Bike Sharing Services in Washington DC to uncover growing membership trends for potential business expansion
 
-## BIKESHARING
-An Analysis of Public Bike Sharing Services to uncover growing trends for potential business expansion
 ## REASONS FOR SELECTING TOPIC
-We want to offer a deeper analysis to investors and community on the growth trends of Public Bike Sharing Services in order to motivate investors to expand the business and increase trust from community to their usage
+We want to offer a deeper analysis to investors and the community on the growing membership trends of Public Bike Sharing Services in Washington DC in order to motivate investors to expand the avilability of bike stations and also understand the usage needs of the community
+
 ## VARIABLES TO CONSIDER
 - Location of Bike Station (Latitude, Longitude, and Zip code)
-- Member and Casual user types 
-- Popular and Unpopular Bike routes
+- User types: Member and Casual
+- Bike routes: Popular and Unpopular
+- User number: Weekday and Weekend
+- Time of day of the ride
 - Weather
-- Weekday and Weekend User number 
-- Time of day analysis
+
 ## DESCRIPTION OF SOURCE DATA
-We will be using datasources from Capitol Bikshare tripdata datasets to analyze the growth of its business through the number of trips taken, locations of bike stops, and membership ratio of users.
+We will be using datasources from Capital Bike Share website. The website counts with csv files from 2010 to 2021. 
+
 ### BikeSharing Data:
-Â·      Capitol Bikshare (Washington D.C.) from 2010 - 05/2021 
-`<https://s3.amazonaws.com/capitalbikeshare-data/index.html>`
-### Climate Information:
+- Capital Bikshare (Washington D.C.) from 2010 - 05/2021. Retrieved from: https://s3.amazonaws.com/capitalbikeshare-data/index.html
+- 
+### Weather Information:
 - https://developer.accuweather.com/
 - https://www.ncdc.noaa.gov/cdo-web/search
-### Census Data:
-Â·      U.S census data (Information around gender, occupation, age , type of usage)
+
 ## QUESTIONS TO ANSWER
-Â·      What kind of factors of location do impact on high demand of PBS?
-Â·      What are the reason in imbalance in ratio of member users and casual users by different bike station, if any?
-Â·      When 
-Â·      Are there any factors that cause negative impact on the growth of PBS in the city?(weather, location of bick docks etc)
-Â·      
+1. What kind of factors influence riders to define their membership type?
+- What are the possible reasons for the imbalance between member and casual users?    
 
 ## ETL Process
 1. Prepare a Dataset of Capital Bikeshare bike trip data by eliminating  
-    - Load the total 65 Capital Bikeshare bike trip dataset from `Index of bucket "capitalbikeshare-data"` page of Capital Bikeshare website.ã€€
+    - Load the total 65 Capital Bikeshare bike trip dataset from `Index of bucket "capitalbikeshare-data"` page of Capital Bikeshare website.
     - Create an index of the 65 files as a csv file to allow python code able to call files by each file's directory and file name.
     ```
     # import dependencies
@@ -166,9 +166,16 @@ We will be using datasources from Capitol Bikshare tripdata datasets to analyze 
    folder_path = '../Datasets/Washington DC/'
    station_list_cleaned.to_csv(os.path.join(folder_path,'station_list.csv'),index=False)
  ```
+- Convert time date feature into a day of week column. 
+![image](https://user-images.githubusercontent.com/78698456/125535528-357a0d62-ebbe-4b9b-bff5-ff3186481461.png)
+
 ## Mockup of Database
 
-## Machine Learning
-Â·       We will use Visualization using Tableau and R. Visualize the maps of each city and show popular routes. Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes
-Â·       We are also thinking about multivariate regression to identify which factor are affecting the PBS. Or random forest model to predict the availability of bikes in the stations
+## MACHINE LEARNING
+- We will develop Visualization using Tableau and R. 
+- Visualize the maps of each city and show popular routes. 
+- Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes
+- We are also thinking about multivariate regression to identify which factor are affecting the PBS or random forest model to predict the availability of bikes in the stations.
 
+## DASHBOARD
+- The creation of the dashboard is still in process. However we will be using Tableau tool to create a dashboard that will aim to story tell the creation process of the analysis.
