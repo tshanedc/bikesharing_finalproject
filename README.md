@@ -11,15 +11,16 @@ We want to offer a deeper analysis to investors and the community on the growing
 - Bike routes: Popular and Unpopular
 - User number: Weekday and Weekend
 - Time of day of the ride
-- Weather
 
-## DESCRIPTION OF SOURCE DATA
-We will be using datasources from Capital Bike Share website. The website counts with csv files from 2010 to 2021. 
+## DESCRIPTION OF THE SOURCE DATA
+For our analysis, we are using secondary data which has already been collected by the capital bike share website (https://www.capitalbikeshare.com/system-data). The data was stored in CSV format and we were able to find data from 2010 to 2021. 
+
+For the years 2010 and 2011 the daily bike ride information of the whole year was gathered in a unique CSV file. From 2012 to 2017, the daily bike ride information was gathered in quarterly arranged CSV files and from 2018 to 2021 the bike ride information was collected in monthly CSV files. Data for the month of april 2020 was not available and year 2021 cut in the month of may.
+
+In total, our final data was 66 CSV files with over 26,000,000 rows and 8 columns each.
 
 ### BikeSharing Data:
 - Capital Bikshare (Washington D.C.) from 2010 - 05/2021. Retrieved from: https://s3.amazonaws.com/capitalbikeshare-data/index.html
-- 
-
 
 ## QUESTIONS TO ANSWER
 1. What kind of factors influence riders to define their membership type?
@@ -168,6 +169,8 @@ We will be using datasources from Capital Bike Share website. The website counts
 ![image](https://user-images.githubusercontent.com/78698456/125535528-357a0d62-ebbe-4b9b-bff5-ff3186481461.png)
 
 ## Mockup of Database
+![image](https://user-images.githubusercontent.com/78698456/125536055-a67dc9b2-1dc4-4ab6-a4dc-4299639a83bc.png)
+
 
 ## MACHINE LEARNING
 - We will develop Visualization using Tableau and R. 
