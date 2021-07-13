@@ -1,0 +1,16 @@
+1,All_Bike_Trips (2010-2021/05),,,,,,,
+column name,start_station_id,start_station_name,end_station_id,end_station_name,duration,started_at ,ended_at,member_casual
+data type,int,str,int,str,time,time,time,categorical
+,,,,,,,,
+2,2010-2020/03 Trips with Bike Number,,,,,,,
+column name,bike_number,start_station_id,start_station_name,end_station_id,end_station_name,member_casual,,
+data type,int,int,str,int,str,categorical,,
+,,,,,,,,
+3,2020/05-2021/05 Trips with rideable_type,,,,,,,
+column name,rideable_type,start_station_id,end_station_id,duration,member_casual,,,
+data type,categorical,int,int,time,categorical,,,
+,,,,,,,,
+,,,,,,,,
+4,station_list,,,,,,,
+column name,start_station_id,station_name,lat,lng,,,,
+data type,int,str,int,int,,,,
