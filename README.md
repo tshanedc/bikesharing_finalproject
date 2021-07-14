@@ -169,8 +169,11 @@ In total, our final data was 66 CSV files with over 26,000,000 rows and 8 column
 ![image](https://user-images.githubusercontent.com/78698456/125535528-357a0d62-ebbe-4b9b-bff5-ff3186481461.png)
 
 ## Mockup of Database
-![image](https://user-images.githubusercontent.com/78698456/125536055-a67dc9b2-1dc4-4ab6-a4dc-4299639a83bc.png)
+Our database has been refined and currently, holds the following schema:
 
+![image](https://user-images.githubusercontent.com/78698456/125697070-0860aaa8-99b0-452d-b74d-cf30d090c097.png)
+
+The connection between tables, the fields that have been kept and the data types are displayed in the image above.
 
 ## MACHINE LEARNING
 - We will develop Visualization using Tableau and R. 
