@@ -23,8 +23,7 @@ In total, our final data was 66 CSV files with over 26,000,000 rows and 8 column
 - Capital Bikshare (Washington D.C.) from 2010 - 05/2021. Retrieved from: https://s3.amazonaws.com/capitalbikeshare-data/index.html
 
 ## QUESTIONS TO ANSWER
-1. What kind of factors influence riders to define their membership type?
-- What are the possible reasons for the imbalance between member and casual users?    
+1. What factors influence membership type of riders?    
 
 ## ETL Process
 1. Prepare a Dataset of Capital Bikeshare bike trip data by eliminating  
@@ -167,6 +166,16 @@ In total, our final data was 66 CSV files with over 26,000,000 rows and 8 column
  ```
 - Convert time date feature into a day of week column. 
 ![image](https://user-images.githubusercontent.com/78698456/125535528-357a0d62-ebbe-4b9b-bff5-ff3186481461.png)
+
+Table #1 all_bikes_trips
+![image](https://user-images.githubusercontent.com/78698456/125867516-cb3773d8-bef6-4fa0-bc48-196176f0c837.png)
+
+Table #2 bike_number
+![image](https://user-images.githubusercontent.com/78698456/125867583-4f7e5d1e-1978-4af2-b93c-063ee3ae836d.png)
+
+Table #3 Rideable_type
+![image](https://user-images.githubusercontent.com/78698456/125867644-9e5ca221-3d0e-4a30-b9bf-cb9163e05e2e.png)
+
 
 ## Mockup of Database
 Our database has been refined and currently, holds the following schema:
