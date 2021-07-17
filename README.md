@@ -177,13 +177,15 @@ Table #3 Rideable_type
 ![image](https://user-images.githubusercontent.com/78698456/125867644-9e5ca221-3d0e-4a30-b9bf-cb9163e05e2e.png)
 
 
-## Mockup of Database
+## Database Integration
+
 Our database has been refined and currently, holds the following schema:
 
 ![image](https://user-images.githubusercontent.com/78698456/125697070-0860aaa8-99b0-452d-b74d-cf30d090c097.png)
 
 The connection between tables, the fields that have been kept and the data types are displayed in the image above.
 
+![Final_ERD](https://user-images.githubusercontent.com/78656720/126044898-bf43e200-e51a-45a5-83e4-865fc1d466df.png)
 ## MACHINE LEARNING
 - We will develop Visualization using Tableau and R. 
 - Visualize the maps of each city and show popular routes. 
