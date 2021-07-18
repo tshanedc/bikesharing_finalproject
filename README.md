@@ -1,4 +1,5 @@
 
+
 # FINAL PROJECT
 ## BIKESHARING SERVICES
 An Analysis of Public Bike Sharing Services in Washington DC to uncover growing membership trends for potential business expansion
@@ -197,4 +198,5 @@ The connection between tables, the fields that have been kept and the data types
 - We are also thinking about multivariate regression to identify which factor are affecting the PBS or random forest model to predict the availability of bikes in the stations.
 
 ## DASHBOARD
-- The creation of the dashboard is still in process. However we will be using Tableau tool to create a dashboard that will aim to story tell the creation process of the analysis.
+The image below shows the comaparision of number of trips by memebrship status and the bike type. The table contains the 10 years data of bike trip in Washington DC. As we can see in the image the mebers bike morethan the casual in all bike types. 
+![trip_biketype](https://user-images.githubusercontent.com/78656720/126076728-15f14cb9-ced2-4afb-9c75-78831ec4003a.png)
