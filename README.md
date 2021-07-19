@@ -272,15 +272,19 @@ In total, our final data was 66 CSV files with over 26,000,000 rows and 8 column
 ![image](https://user-images.githubusercontent.com/78698456/125535528-357a0d62-ebbe-4b9b-bff5-ff3186481461.png)
 
 Table #1 all_bikes_trips
+
 ![image](https://user-images.githubusercontent.com/78698456/125867516-cb3773d8-bef6-4fa0-bc48-196176f0c837.png)
 
 Table #2 bike_number
+
 ![image](Image/2_bike_number_table.png)
 
 Table #3 Rideable_type
+
 ![image](Image/3_rideable_type_table.png)
 
 Table #4 Station List
+
 ![image](Image/4_station_list_table.png)
 
 Table #5 Station List with its active dates
