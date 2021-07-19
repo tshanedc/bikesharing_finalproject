@@ -314,11 +314,11 @@ The connection between tables, the fields that have been kept and the data types
 
 ARIMA Model:
 Part 1: Preprocessing (Completed)
-Read in 'all_bike' csv
-Change Trip_number col to lowercase
-Read in 'bike_type' csv
-Encode bike types
-Rename cols
+1) Read in 'all_bike' csv
+- Change Trip_number col to lowercase
+1) Read in 'bike_type' csv
+- Encode bike types
+- Rename cols
 Merge 'all_bike' and 'bike_type'
 Drop unnecessary cols
 Change 'startdate' from object to datetime
