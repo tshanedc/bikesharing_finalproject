@@ -319,13 +319,17 @@ Part 1: Preprocessing (Completed)
 1) Read in 'bike_type' csv
 - Encode bike types
 - Rename cols
-Merge 'all_bike' and 'bike_type'
-Drop unnecessary cols
-Change 'startdate' from object to datetime
-Set index to 'startdate'
+1) Merge 'all_bike' and 'bike_type'
+2) Drop unnecessary cols
+3) Change 'startdate' from object to datetime
+4) Set index to 'startdate'
+
 Part 2: Split Train_Test
+
 Part 3: Check for Stationarity
+
 Part 4: Modeling/Forecasting
+
 Part 5: Evaluate/Improve Forecasting/Predictions 
 
 ## DASHBOARD
