@@ -25,7 +25,9 @@ In total, our final data was 66 CSV files with over 26,000,000 rows and 8 column
 - Capital Bikshare (Washington D.C.) from 2010 - 05/2021. Retrieved from: https://s3.amazonaws.com/capitalbikeshare-data/index.html
 
 ## QUESTIONS TO ANSWER
-1. What factors influence membership type of riders?    
+Q. How time of the day influences the member type of riders in Washington D.C.?
+
+H0: The member type of riders is not related to the time of the day of the ride. 
 
 ## ETL Process
 1. Process Capital Bikeshare bike trip data sets to create one big dataset that contains all 28M trips with followings columns: 'Trip Number,' 'Starts station number,' 'End station number,' 'start date,' 'end date,' and 'member type.'
@@ -313,3 +315,7 @@ The connection between tables, the fields that have been kept and the data types
 ## DASHBOARD
 The image below shows the comaparision of number of trips by memebrship status and the bike type. The table contains the 10 years data of bike trip in Washington DC. As we can see in the image the mebers bike morethan the casual in all bike types. 
 ![trip_biketype](https://user-images.githubusercontent.com/78656720/126076728-15f14cb9-ced2-4afb-9c75-78831ec4003a.png)
+
+Visualization of 'stationnumber', 'occurrence', 'latitude', and 'longitude' to display bike stations and how many trips where initiated in each.
+![image](https://user-images.githubusercontent.com/78698456/126231066-b6978c64-9c18-4749-bda7-03dca0d7054e.png)
+
