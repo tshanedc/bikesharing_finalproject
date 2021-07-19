@@ -312,6 +312,22 @@ The connection between tables, the fields that have been kept and the data types
 - Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes
 - We are also thinking about multivariate regression to identify which factor are affecting the PBS or random forest model to predict the availability of bikes in the stations.
 
+ARIMA Model:
+Part 1: Preprocessing (Completed)
+Read in 'all_bike' csv
+Change Trip_number col to lowercase
+Read in 'bike_type' csv
+Encode bike types
+Rename cols
+Merge 'all_bike' and 'bike_type'
+Drop unnecessary cols
+Change 'startdate' from object to datetime
+Set index to 'startdate'
+Part 2: Split Train_Test
+Part 3: Check for Stationarity
+Part 4: Modeling/Forecasting
+Part 5: Evaluate/Improve Forecasting/Predictions 
+
 ## DASHBOARD
 The image below shows the comaparision of number of trips by memebrship status and the bike type. The table contains the 10 years data of bike trip in Washington DC. As we can see in the image the mebers bike morethan the casual in all bike types. 
 ![trip_biketype](https://user-images.githubusercontent.com/78656720/126076728-15f14cb9-ced2-4afb-9c75-78831ec4003a.png)
