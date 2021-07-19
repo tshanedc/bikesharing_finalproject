@@ -215,8 +215,8 @@ In total, our final data was 66 CSV files with over 26,000,000 rows and 8 column
     ```    
     
  2. Create a dataset with list of `station_id` and corresponding latitude and longitude by utilizing the datasets from April 2020 to May 2021. Note the most recent file available is May 2021 and Capital Bikeshare started to record geographic information since April 2020.
-- Use the `merge_df` dataframe containing the files from index 53 to 65 to create a new dataframe with 'stationnumber' and its corresponding geocode.
-```
+    - Use the `merge_df` dataframe containing the files from index 53 to 65 to create a new dataframe with 'stationnumber' and its corresponding geocode.
+   ```
    # Choose columns to keep for station_list table
     merge_df_dropped = merge_df[['start_station_id','end_station_id',
                                  'start_station_name','end_station_name',
@@ -265,7 +265,7 @@ In total, our final data was 66 CSV files with over 26,000,000 rows and 8 column
     # Output to csv
     folder_path = '../Datasets/Washington DC/tables/'
     station_list_cleaned.to_csv(os.path.join(folder_path,'Table4_station_list.csv'),index=False)
- ```
+   ```
 
 
 - Convert time date feature into a day of week column. 
