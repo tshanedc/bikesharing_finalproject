@@ -31,6 +31,7 @@ Q. How does time of day influences the member type of riders in Washington D.C.?
 
 Q. How does the weekday/weekend difference influence the membership type of riders in Washington D.C.?
 
+Q. How does type of bike affect membership type?
 
 H0: The member type of riders is not related to the time of the day of the ride. 
 
