@@ -25,7 +25,7 @@ In total, our final data was 66 CSV files with over 26,000,000 rows and 8 column
 - Capital Bikshare (Washington D.C.) from 2010 - 05/2021. Retrieved from: https://s3.amazonaws.com/capitalbikeshare-data/index.html
 
 ## QUESTIONS TO ANSWER
-Q. How time of the day influences the member type of riders in Washington D.C.?
+Q. How does time of day influences the member type of riders in Washington D.C.?
 
 H0: The member type of riders is not related to the time of the day of the ride. 
 
