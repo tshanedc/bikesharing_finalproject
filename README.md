@@ -5,7 +5,7 @@
 An Analysis of Public Bike Sharing Services in Washington DC to uncover growing membership trends for potential business expansion
 
 ## REASONS FOR SELECTING TOPIC
-We want to offer a deeper analysis to investors and the community on the growing membership trends of Public Bike Sharing Services in Washington DC in order to motivate investors to expand the avilability of bike stations and also understand the usage needs of the community
+We want to offer a deeper analysis to investors and the community on the growing membership trends of Public Bike Sharing Services in Washington DC in order to motivate investors to expand the availability of bike stations and also understand the usage needs of the community
 
 ## VARIABLES TO CONSIDER
 - Location of Bike Station (Latitude, Longitude, and Zip code)
