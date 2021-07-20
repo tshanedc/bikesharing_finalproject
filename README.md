@@ -5,7 +5,9 @@
 An Analysis of Public Bike Sharing Services in Washington DC to uncover growing membership trends for potential business expansion
 
 ## REASONS FOR SELECTING TOPIC
-We want to offer a deeper analysis to investors and the community on the growing membership trends of Public Bike Sharing Services in Washington DC in order to motivate investors to expand the availability of bike stations and also understand the usage needs of the community
+We want to offer a deeper analysis to investors and the community on the growing membership trends of Public Bike Sharing Services in Washington DC in order to motivate investors to expand the availability of bike stations 
+
+{Mair will insert additional content}
 
 ## VARIABLES TO CONSIDER
 - Location of Bike Station (Latitude, Longitude, and Zip code)
@@ -26,6 +28,9 @@ In total, our final data was 66 CSV files with over 26,000,000 rows and 8 column
 
 ## QUESTIONS TO ANSWER
 Q. How does time of day influences the member type of riders in Washington D.C.?
+
+Q. How does the weekday/weekend difference influence the membership type of riders in Washington D.C.?
+
 
 H0: The member type of riders is not related to the time of the day of the ride. 
 
