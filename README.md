@@ -1,8 +1,7 @@
 ## ETL Process
-1. Process Capital Bikeshare bike trip data sets to create one big dataset that contains all 28M trips with followings columns: 'Trip Number,' 'Starts station number,' 'End station number,' 'start date,' 'end date,' and 'member type.'
-    - Load the total 65 Capital Bikeshare bike trip dataset from `Index of bucket "capitalbikeshare-data"` page of Capital Bikeshare website.
-    - Create an index of the 65 files as a csv file to allow python code able to call files by each file's directory and file name.
-    - Process files with index 0-52 and 53-65 separately as those files have different columns. The list can be refered to the csv file <Resources/capitalbikeshare_dataset_index.csv>.
+1. Process Capital Bikeshare bike trip data sets to create one big dataset that contains all 28M trips with followings columns: 'Trip Number,' 'Starts station number,' 'End station number,' 'start date,' 'end date,' and 'member type' to enable us review when and where each bike trip took place and whether it was done by a member or a casual user. 
+    - Downloaded the total 65 Capital Bikeshare bike trip dataset available from `Index of bucket "capitalbikeshare-data"` page of Capital Bikeshare website.
+    - Create an index of the 65 files as a csv file to allow python code able to call files by each file's directory and file name. Then, process files with index 0-52 and 53-65 separately as those files have different columns. The list can be refered to the csv file <Resources/capitalbikeshare_dataset_index.csv>.
    ### Processing the files from Index 0-52
     ```
     # Drop unnecessary columns from the imported datasets and check data types
@@ -61,8 +60,6 @@
     # Convert the 'started_at' and 'ended_at' columns to datetime data type
     df_cleaned['started_at'] = pd.to_datetime(df_cleaned['started_at'])
     df_cleaned['ended_at'] = pd.to_datetime(df_cleaned['ended_at'])
-    df_cleaned['start_station_id'] = df_cleaned['start_station_id'].astype(int)
-    df_cleaned['end_station_id'] = df_cleaned['end_station_id'].astype(int)
     
     # Rename columns match with the other table
     df_renamed = df_cleaned.rename(columns={'start_station_id':'startsstationnumber',
