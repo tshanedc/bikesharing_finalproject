@@ -36,56 +36,13 @@ Q. How does type of bike affect membership type?
 H0: The member type of riders is not related to the time of the day of the ride. 
 
 ## ETL Process
-1. Process Capital Bikeshare bike trip data sets to create one big dataset that contains all 28M trips with followings columns: 'Trip Number,' 'Starts station number,' 'End station number,' 'start date,' 'end date,' and 'member type.'
-    - Load the total 65 Capital Bikeshare bike trip dataset from `Index of bucket "capitalbikeshare-data"` page of Capital Bikeshare website.
-    - Create an index of the 65 files as a csv file to allow python code able to call files by each file's directory and file name.
-    - Process files with index 0-52 and 53-65 separately as those files have different columns. The list can be refered to the csv file <Resources/capitalbikeshare_dataset_index.csv>.
+1. Process Capital Bikeshare bike trip data sets to create one big dataset that contains all 28M trips with followings columns: 'Trip Number,' 'Starts station number,' 'End station number,' 'start date,' 'end date,' and 'member type' to enable us review when and where each bike trip took place and whether it was done by a member or a casual user. 
+    - Downloaded the total 65 Capital Bikeshare bike trip dataset available from `Index of bucket "capitalbikeshare-data"` page of Capital Bikeshare website.
+    - Create an index of the 65 files as a csv file to allow python code able to call files by each file's directory and file name. Then, process files with index 0-52 and 53-65 separately as those files have different columns. The list can be refered to the csv file <Resources/capitalbikeshare_dataset_index.csv>.
    ### Processing the files from Index 0-52
+   - The files have unique column 'Bike number' which define which bike was used for each trip.
     ```
-    # import dependencies
-    import os
-    import pandas as pd
-
-    # import index csv for datasets
-    #file_path = "../Datasets/Washington DC/capitalbikeshare_dataset_index.xlsx"
-    folder_path = '../Datasets/Washington DC/'
-    file_name = 'capitalbikeshare_dataset_index.csv'
-    index_df=pd.read_csv(f"{folder_path}{file_name}")
-
-    # Adjust the "Year" column as string data to add 
-    index_df['Year'] = index_df['Year'].astype(str)
-    index_df.dtypes
-   
-    # variables
-    i = 0
-    Year = index_df['Year'][i]+'/'
-    file_name = index_df['File Name'][i]+'.csv'
-    file_name = f'{file_name}'
-    file_name
-
-    # Create the list of csv file paths we want to read
-    csv_file_list = []
-    # loop through the range of index we are interested to create a list of file path of csv files
-    for i in range(0,52):
-        Year = index_df['Year'][i]+'/'
-        file_name = index_df['File Name'][i]+'.csv'
-        file_name = f'{file_name}'
-        folder_path = '../Datasets/Washington DC/'
-        folder_path = f"{folder_path}{Year}{file_name}"
-        csv_file_list.append(f"{folder_path}")
-    csv_file_list
-    
-    # Read the listed file paths as DataFrame and merge
-    list_of_datasets = []
-    # loop through pd.read_csv method with the list of file path we created earlier 
-    for filepath in csv_file_list:
-        list_of_datasets.append(pd.read_csv(filepath, low_memory=False))
-
-    # merge the dataframes we read into one dataframe
-    merge_df = pd.concat(list_of_datasets)
-    merge_df
-    
-    # Drop unnecessary columns for geo data table and check data types
+    # Drop unnecessary columns from the imported datasets and check data types
     df_dropped = merge_df[['Start station number','End station number','Start date','End date','Member type','Bike number']]
     
     # Take rows of 'Bike number' which are not NaN.
@@ -118,51 +75,13 @@ H0: The member type of riders is not related to the time of the day of the ride.
       
     # Add column with Day of the Week
     trips_2010to202003['weekday'] = trips_2010to202003['startdate'].dt.day_name()
-    
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables/'
-    trips_2010to202003.to_csv(os.path.join(folder_path,'trips_2010to202003.csv'),index=False)
     ```
-    ### Output 'bike_number' table 
-    - Extract `bike_number` dataframe and ouput as csv from the previous extraction code.
+    ### Processing the files from Index 53-65
+    - These files have unique column called 'rideable_type,' which describes which bike type was used. We extract this information separately to analyze how this variable affects the membership type of users.
     ```
-    columnsTitlesBikeNumber = ['Trip_number','bikenumber','startsstationnumber',
-                             'endstationnumber','membertype']
-    bike_number = df_reset.reindex(columns = columnsTitlesBikeNumber)
-    
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables'
-    bike_number.to_csv(os.path.join(folder_path,'Table2_bike_number.csv'),index=False)
-    ```
-   ### Processing the files from Index 53-65
-    ```
-    # Create the list of csv file paths we want to read
-    csv_file_list = []
-    # loop through the range of index we are interested to create a list of file path of csv files
-    for i in range(53,65):
-        Year = index_df['Year'][i]+'/'
-        file_name = index_df['File Name'][i]+'.csv'
-        file_name = f'{file_name}'
-        folder_path = '../Datasets/Washington DC/'
-        folder_path = f"{folder_path}{Year}{file_name}"
-        csv_file_list.append(f"{folder_path}")
-    csv_file_list
-    
-    # Read the listed file paths as DataFrame and merge
-    list_of_datasets = []
-    # loop through pd.read_csv method with the list of file path we created earlier 
-    for filepath in csv_file_list:
-        list_of_datasets.append(pd.read_csv(filepath, low_memory=False))
-
-    # merge the dataframes we read into one dataframe
-    merge_df = pd.concat(list_of_datasets)
-    
     # Drop unnecessary columns for geo data table and check data types
     df_dropped = merge_df[['rideable_type','start_station_id','end_station_id','started_at','ended_at','member_casual']]
 
-    # Identify any NaN in the dataset
-    df_dropped.isnull().sum()
-    
     # Take rows of 'start_station_id' and 'end_station_id' which are not NaN.
     df_cleaned = df_dropped[df_dropped['start_station_id'].notna()]
     df_cleaned = df_cleaned[df_cleaned['end_station_id'].notna()]
@@ -173,8 +92,6 @@ H0: The member type of riders is not related to the time of the day of the ride.
     # Convert the 'started_at' and 'ended_at' columns to datetime data type
     df_cleaned['started_at'] = pd.to_datetime(df_cleaned['started_at'])
     df_cleaned['ended_at'] = pd.to_datetime(df_cleaned['ended_at'])
-    df_cleaned['start_station_id'] = df_cleaned['start_station_id'].astype(int)
-    df_cleaned['end_station_id'] = df_cleaned['end_station_id'].astype(int)
     
     # Rename columns match with the other table
     df_renamed = df_cleaned.rename(columns={'start_station_id':'startsstationnumber',
@@ -192,23 +109,26 @@ H0: The member type of riders is not related to the time of the day of the ride.
     # then choose columns to keep for two tables: trip_later and rideable_type
     df = df_renamed.sort_values(by='startdate', ascending=True, na_position='first')
     df_reset = df.reset_index(drop=True)
+    # we begin the index from '26433601' to make the dataframe sequential to the previous dataframe
     df_reset.index = df_reset.index + 26433601
     df_reset['Trip_number'] = df_reset.index
     columnsTitles = ['Trip_number','startsstationnumber','endstationnumber',
                     'startdate','enddate','membertype']
-    columnsTitlesRideableType = ['Trip_number','rideable_type','startsstationnumber',
-                                 'endstationnumber','membertype']
     trips_202005to202105 = df_reset.reindex(columns = columnsTitles)
-    rideable_type = df_reset.reindex(columns = columnsTitlesRideableType )
-
+  
     # Add column with Day of the Week
     trips_202005to202105['weekday'] = trips_202005to202105['startdate'].dt.day_name()
-    
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables/'
-    trips_202005to202105.to_csv(os.path.join(folder_path,'trips_202005to202105.csv'),index=False)
-    folder_path = '../Datasets/Washington DC/tables/'
-    rideable_type.to_csv(os.path.join(folder_path,'Table3_rideable_type.csv'),index=False)
+    ```
+    ### Merge the two dataframes together to make all_bike_trips file
+    - merge the `trips_2010to202003.csv` and `trips_202005to202105.csv` files together 
+ 
+2. Create two additional tables from `trips_2010to202003.csv` and `trips_202005to202105.csv` that represent 'Bike number' and 'rideable_type' of bikes respectively.
+    ### Output 'bike_number' table 
+    - Extract `bike_number` dataframe and ouput as csv from the previous extraction code.
+    ```
+    columnsTitlesBikeNumber = ['Trip_number','bikenumber','startsstationnumber',
+                             'endstationnumber','membertype']
+    bike_number = df_reset.reindex(columns = columnsTitlesBikeNumber)
     ```
     ### Output 'rideable_type' table 
     - Extract `rideable_type` dataframe and ouput as csv from the previous extraction code.
@@ -216,34 +136,20 @@ H0: The member type of riders is not related to the time of the day of the ride.
     columnsTitlesRideableType = ['Trip_number','rideable_type','startsstationnumber',
                              'endstationnumber','membertype']
     rideable_type = df_reset.reindex(columns = columnsTitlesRideableType)
-    
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables/'
-    rideable_type.to_csv(os.path.join(folder_path,'Table3_rideable_type.csv'),index=False)
     ```    
     
- 2. Create a dataset with list of `station_id` and corresponding latitude and longitude by utilizing the datasets from April 2020 to May 2021. Note the most recent file available is May 2021 and Capital Bikeshare started to record geographic information since April 2020.
+3. Create a dataset with list of `station_id` and corresponding latitude and longitude by utilizing the datasets from April 2020 to May 2021. Note the most recent file available is May 2021 and Capital Bikeshare started to record geographic information since April 2020.
     - Use the `merge_df` dataframe containing the files from index 53 to 65 to create a new dataframe with 'stationnumber' and its corresponding geocode.
    ```
    # Choose columns to keep for station_list table
     merge_df_dropped = merge_df[['start_station_id','end_station_id',
                                  'start_station_name','end_station_name',
                                  'start_lat','start_lng','end_lat','end_lng']]
-   
-   # Rename the dataframe to df for simplicity
-    df = merge_df_dropped
-    
+
     # Take rows of 'start_station_id' and 'start_lat' which are not NaN.
     df_cleaned = df[df['start_station_id'].notna()]
     df_cleaned = df_cleaned[df_cleaned['end_station_id'].notna()]
-    df_cleaned = df_cleaned[df_cleaned['start_lat'].notna()]
-    df_cleaned['start_station_id'].isnull().sum()
-    
-    # convert to station_id to integer and frop unnecessary columns
-    df_cleaned['start_station_id'] = df_cleaned['start_station_id'].astype(int)
-    df_cleaned['end_station_id'] = df_cleaned['end_station_id'].astype(int)
-    station_table =     df_cleaned[['start_station_id','end_station_id','start_station_name','end_station_name','start_lat','start_lng','end_lat','end_lng']]
-    station_table.dtypes
+    station_table = df_cleaned[df_cleaned['start_lat'].notna()]
     
     # Splitting data by start stations and end stations
     start_stations = station_table[['start_station_id','start_station_name','start_lat','start_lng']]
@@ -261,7 +167,6 @@ H0: The member type of riders is not related to the time of the day of the ride.
     # Pick rows with only values
     station_list = station_list[station_list['station_id'].notna()]
     station_list['station_id'].isnull().sum()
-    
     station_list.sort_values(by='station_id', ascending=True, na_position='first')
     
     # Drop the duplicate entries of 'station_id'
@@ -269,12 +174,24 @@ H0: The member type of riders is not related to the time of the day of the ride.
                                  keep = 'first')
     station_list_cleaned = station_list_cleaned.sort_values(by='station_id', 
                                                             ascending=True).reset_index().drop(columns=['index'])
-                                                            
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables/'
-    station_list_cleaned.to_csv(os.path.join(folder_path,'Table4_station_list.csv'),index=False)
    ```
-
+4. Output an additional list of bike stations that displays the first day and the last day of their usage to identify if any stations have imbalance in number of data points due its length of operation.
+    ```
+    # From the 56M entries of trips, pick the first day and the last day
+    station_dates = station_list_all.groupby(['station_id'])['started_at'].agg(['first','last'])
+    
+    # add 'station_id' as first column
+    df = station_dates.assign(startstationnumber=station_id.values)
+    station_active_dates = df[['station_id','first','last']].reset_index(drop=True)
+    ```
+5.  From the `all_bike_trips.csv` file, extract an additional dataframe that displays number of trips took by each staion number.
+    ```
+    # Count how many times the 'startsstationnumber' appears in the list to count the number of trips took place
+    number_of_trips = pd.DataFrame(all_bike_trips['startsstationnumber'].value_counts())
+    number_of_trips = number_of_trips.rename(columns={'startsstationnumber':'occurence'})
+    number_of_trips['startsstationnumber'] = number_of_trips.index
+    number_of_trips.reset_index(drop=True)
+    ```
 
 - Convert time date feature into a day of week column. 
 ![image](https://user-images.githubusercontent.com/78698456/125535528-357a0d62-ebbe-4b9b-bff5-ff3186481461.png)
