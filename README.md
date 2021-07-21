@@ -5,50 +5,7 @@
     - Process files with index 0-52 and 53-65 separately as those files have different columns. The list can be refered to the csv file <Resources/capitalbikeshare_dataset_index.csv>.
    ### Processing the files from Index 0-52
     ```
-    # import dependencies
-    import os
-    import pandas as pd
-
-    # import index csv for datasets
-    #file_path = "../Datasets/Washington DC/capitalbikeshare_dataset_index.xlsx"
-    folder_path = '../Datasets/Washington DC/'
-    file_name = 'capitalbikeshare_dataset_index.csv'
-    index_df=pd.read_csv(f"{folder_path}{file_name}")
-
-    # Adjust the "Year" column as string data to add 
-    index_df['Year'] = index_df['Year'].astype(str)
-    index_df.dtypes
-   
-    # variables
-    i = 0
-    Year = index_df['Year'][i]+'/'
-    file_name = index_df['File Name'][i]+'.csv'
-    file_name = f'{file_name}'
-    file_name
-
-    # Create the list of csv file paths we want to read
-    csv_file_list = []
-    # loop through the range of index we are interested to create a list of file path of csv files
-    for i in range(0,52):
-        Year = index_df['Year'][i]+'/'
-        file_name = index_df['File Name'][i]+'.csv'
-        file_name = f'{file_name}'
-        folder_path = '../Datasets/Washington DC/'
-        folder_path = f"{folder_path}{Year}{file_name}"
-        csv_file_list.append(f"{folder_path}")
-    csv_file_list
-    
-    # Read the listed file paths as DataFrame and merge
-    list_of_datasets = []
-    # loop through pd.read_csv method with the list of file path we created earlier 
-    for filepath in csv_file_list:
-        list_of_datasets.append(pd.read_csv(filepath, low_memory=False))
-
-    # merge the dataframes we read into one dataframe
-    merge_df = pd.concat(list_of_datasets)
-    merge_df
-    
-    # Drop unnecessary columns for geo data table and check data types
+    # Drop unnecessary columns from the imported datasets and check data types
     df_dropped = merge_df[['Start station number','End station number','Start date','End date','Member type','Bike number']]
     
     # Take rows of 'Bike number' which are not NaN.
@@ -81,10 +38,6 @@
       
     # Add column with Day of the Week
     trips_2010to202003['weekday'] = trips_2010to202003['startdate'].dt.day_name()
-    
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables/'
-    trips_2010to202003.to_csv(os.path.join(folder_path,'trips_2010to202003.csv'),index=False)
     ```
     ### Output 'bike_number' table 
     - Extract `bike_number` dataframe and ouput as csv from the previous extraction code.
@@ -92,40 +45,12 @@
     columnsTitlesBikeNumber = ['Trip_number','bikenumber','startsstationnumber',
                              'endstationnumber','membertype']
     bike_number = df_reset.reindex(columns = columnsTitlesBikeNumber)
-    
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables'
-    bike_number.to_csv(os.path.join(folder_path,'Table2_bike_number.csv'),index=False)
     ```
    ### Processing the files from Index 53-65
     ```
-    # Create the list of csv file paths we want to read
-    csv_file_list = []
-    # loop through the range of index we are interested to create a list of file path of csv files
-    for i in range(53,65):
-        Year = index_df['Year'][i]+'/'
-        file_name = index_df['File Name'][i]+'.csv'
-        file_name = f'{file_name}'
-        folder_path = '../Datasets/Washington DC/'
-        folder_path = f"{folder_path}{Year}{file_name}"
-        csv_file_list.append(f"{folder_path}")
-    csv_file_list
-    
-    # Read the listed file paths as DataFrame and merge
-    list_of_datasets = []
-    # loop through pd.read_csv method with the list of file path we created earlier 
-    for filepath in csv_file_list:
-        list_of_datasets.append(pd.read_csv(filepath, low_memory=False))
-
-    # merge the dataframes we read into one dataframe
-    merge_df = pd.concat(list_of_datasets)
-    
     # Drop unnecessary columns for geo data table and check data types
     df_dropped = merge_df[['rideable_type','start_station_id','end_station_id','started_at','ended_at','member_casual']]
 
-    # Identify any NaN in the dataset
-    df_dropped.isnull().sum()
-    
     # Take rows of 'start_station_id' and 'end_station_id' which are not NaN.
     df_cleaned = df_dropped[df_dropped['start_station_id'].notna()]
     df_cleaned = df_cleaned[df_cleaned['end_station_id'].notna()]
@@ -159,19 +84,10 @@
     df_reset['Trip_number'] = df_reset.index
     columnsTitles = ['Trip_number','startsstationnumber','endstationnumber',
                     'startdate','enddate','membertype']
-    columnsTitlesRideableType = ['Trip_number','rideable_type','startsstationnumber',
-                                 'endstationnumber','membertype']
     trips_202005to202105 = df_reset.reindex(columns = columnsTitles)
-    rideable_type = df_reset.reindex(columns = columnsTitlesRideableType )
-
+    
     # Add column with Day of the Week
     trips_202005to202105['weekday'] = trips_202005to202105['startdate'].dt.day_name()
-    
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables/'
-    trips_202005to202105.to_csv(os.path.join(folder_path,'trips_202005to202105.csv'),index=False)
-    folder_path = '../Datasets/Washington DC/tables/'
-    rideable_type.to_csv(os.path.join(folder_path,'Table3_rideable_type.csv'),index=False)
     ```
     ### Output 'rideable_type' table 
     - Extract `rideable_type` dataframe and ouput as csv from the previous extraction code.
@@ -179,10 +95,6 @@
     columnsTitlesRideableType = ['Trip_number','rideable_type','startsstationnumber',
                              'endstationnumber','membertype']
     rideable_type = df_reset.reindex(columns = columnsTitlesRideableType)
-    
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables/'
-    rideable_type.to_csv(os.path.join(folder_path,'Table3_rideable_type.csv'),index=False)
     ```    
     
  2. Create a dataset with list of `station_id` and corresponding latitude and longitude by utilizing the datasets from April 2020 to May 2021. Note the most recent file available is May 2021 and Capital Bikeshare started to record geographic information since April 2020.
@@ -192,21 +104,16 @@
     merge_df_dropped = merge_df[['start_station_id','end_station_id',
                                  'start_station_name','end_station_name',
                                  'start_lat','start_lng','end_lat','end_lng']]
-   
-   # Rename the dataframe to df for simplicity
-    df = merge_df_dropped
-    
+
     # Take rows of 'start_station_id' and 'start_lat' which are not NaN.
     df_cleaned = df[df['start_station_id'].notna()]
     df_cleaned = df_cleaned[df_cleaned['end_station_id'].notna()]
     df_cleaned = df_cleaned[df_cleaned['start_lat'].notna()]
-    df_cleaned['start_station_id'].isnull().sum()
     
-    # convert to station_id to integer and frop unnecessary columns
+    # convert to station_id to integer and drop unnecessary columns
     df_cleaned['start_station_id'] = df_cleaned['start_station_id'].astype(int)
     df_cleaned['end_station_id'] = df_cleaned['end_station_id'].astype(int)
     station_table =     df_cleaned[['start_station_id','end_station_id','start_station_name','end_station_name','start_lat','start_lng','end_lat','end_lng']]
-    station_table.dtypes
     
     # Splitting data by start stations and end stations
     start_stations = station_table[['start_station_id','start_station_name','start_lat','start_lng']]
@@ -224,7 +131,6 @@
     # Pick rows with only values
     station_list = station_list[station_list['station_id'].notna()]
     station_list['station_id'].isnull().sum()
-    
     station_list.sort_values(by='station_id', ascending=True, na_position='first')
     
     # Drop the duplicate entries of 'station_id'
@@ -232,8 +138,4 @@
                                  keep = 'first')
     station_list_cleaned = station_list_cleaned.sort_values(by='station_id', 
                                                             ascending=True).reset_index().drop(columns=['index'])
-                                                            
-    # Output to csv
-    folder_path = '../Datasets/Washington DC/tables/'
-    station_list_cleaned.to_csv(os.path.join(folder_path,'Table4_station_list.csv'),index=False)
    ```
