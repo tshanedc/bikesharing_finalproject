@@ -230,10 +230,6 @@ The connection between tables, the fields that have been kept and the data types
 ![Inner_Join](https://user-images.githubusercontent.com/78656720/126045190-2021a9e1-b07f-40b8-9c1a-0a5cddf2b1ea.png)
 
 ## MACHINE LEARNING
-- We will develop Visualization using Tableau and R. 
-- Visualize the maps of each city and show popular routes. 
-- Combine the map image with layering and pop-up highlighting the major stations, landmarks to assess the main incentives of riders choosing that routes
-- We are also thinking about multivariate regression to identify which factor are affecting the PBS or random forest model to predict the availability of bikes in the stations.
 
 ARIMA Model:
 Part 1: Preprocessing (Completed)
