@@ -255,6 +255,9 @@ Part 5: Evaluate/Improve Forecasting/Predictions
 The image below shows the comparision of number of trips by membership status and the bike type. The table contains the 10 years data of bike trip in Washington DC. As we can see in the image the mebers bike morethan the casual in all bike types. 
 ![trip_biketype](https://user-images.githubusercontent.com/78656720/126076728-15f14cb9-ced2-4afb-9c75-78831ec4003a.png)
 
-Visualization of 'stationnumber', 'occurrence', 'latitude', and 'longitude' to display bike stations and how many trips where initiated in each.
-![image](https://user-images.githubusercontent.com/78698456/126231066-b6978c64-9c18-4749-bda7-03dca0d7054e.png)
+Visualization of Trip number change overtime by Member or Casual users
+![image](Image/Membershi_Trip_overtime.png)
+
+Visualization of Station and Member or Casual Users
+![image](Image/Membership_by_station.png)
 
