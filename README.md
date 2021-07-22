@@ -249,6 +249,12 @@ Part 4: Modeling/Forecasting
 
 Part 5: Evaluate/Improve Forecasting/Predictions 
 
+
+
+![Bike_trip](https://user-images.githubusercontent.com/78656720/126722999-464de71d-b2ed-4d98-aa1e-b752944f2e0c.png)
+![normal_distribution](https://user-images.githubusercontent.com/78656720/126723035-1f18ea35-4597-437c-9d9c-358216f67c7c.png)
+
+
 ## DASHBOARD
 The image below shows the comparision of number of trips by membership status and the bike type. The table contains the 10 years data of bike trip in Washington DC. As we can see in the image the mebers bike morethan the casual in all bike types. 
 ![trip_biketype](https://user-images.githubusercontent.com/78656720/126076728-15f14cb9-ced2-4afb-9c75-78831ec4003a.png)
