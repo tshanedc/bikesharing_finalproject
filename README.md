@@ -221,8 +221,6 @@ Table #5 Station List with its active dates
 
 Our database has been refined and currently, holds the following schema:
 
-![image](https://user-images.githubusercontent.com/78698456/125697070-0860aaa8-99b0-452d-b74d-cf30d090c097.png)
-
 ![Final_ERD](https://user-images.githubusercontent.com/78656720/126044898-bf43e200-e51a-45a5-83e4-865fc1d466df.png)
 
 The connection between tables, the fields that have been kept and the data types are displayed in the image above. After cleaned and organized the raw data extracted from the citibike website, we created five tables that are ready for our analysis and load the in to PostgerSQL database. While we are working on our project we have also extracted different tables using SQL join query. Looking at the image below we can see the Table created by Inner join from our *station_list* and *station_list_active*.
