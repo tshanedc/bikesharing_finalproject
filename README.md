@@ -268,3 +268,5 @@ Visualization of Trip number change overtime by Member or Casual users
 Visualization of Station and Member or Casual Users
 ![image](Image/Membership_by_station.png)
 
+This visualization shows that the Ratio of Memberhsip user is higher in Weekday
+![image](Image/Membership_Ratio_byDayofWeek.png)
