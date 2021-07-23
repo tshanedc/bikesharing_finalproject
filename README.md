@@ -43,9 +43,6 @@ H0: The member type of riders is not related to the time of the day of the ride.
    ### Processing the files from Index 0-52
    - The files have unique column 'Bike number' which define which bike was used for each trip.
     ```
-    # Drop unnecessary columns from the imported datasets and check data types
-    df_dropped = merge_df[['Start station number','End station number','Start date','End date','Member type','Bike number']]
-    
     # Take rows of 'Bike number' which are not NaN.
     df_cleaned = df_dropped[df_dropped['Bike number'].notna()]
    
@@ -69,20 +66,6 @@ H0: The member type of riders is not related to the time of the day of the ride.
     ### Processing the files from Index 53-65
     - These files have unique column called 'rideable_type,' which describes which bike type was used. We extract this information separately to analyze how this variable affects the membership type of users.
     ```
-    # Drop unnecessary columns for geo data table and check data types
-    df_dropped = merge_df[['rideable_type','start_station_id','end_station_id','started_at','ended_at','member_casual']]
-
-    # Take rows of 'start_station_id' and 'end_station_id' which are not NaN.
-    df_cleaned = df_dropped[df_dropped['start_station_id'].notna()]
-    df_cleaned = df_cleaned[df_cleaned['end_station_id'].notna()]
-   
-   # Remove a row with mixed data 
-    df_cleaned = df_cleaned[~(df_cleaned == "MTL-ECO5-03").any(axis=1)]
-    
-    # Convert the 'started_at' and 'ended_at' columns to datetime data type
-    df_cleaned['started_at'] = pd.to_datetime(df_cleaned['started_at'])
-    df_cleaned['ended_at'] = pd.to_datetime(df_cleaned['ended_at'])
-    
     # Sort the table by the order of 'startdate' to list the trips in order of their ocuurence
     # then choose columns to keep for two tables: trip_later and rideable_type
     df = df_renamed.sort_values(by='startdate', ascending=True, na_position='first')
@@ -119,16 +102,6 @@ H0: The member type of riders is not related to the time of the day of the ride.
 3. Create a dataset with list of `station_id` and corresponding latitude and longitude by utilizing the datasets from April 2020 to May 2021. Note the most recent file available is May 2021 and Capital Bikeshare started to record geographic information since April 2020.
     - Use the `merge_df` dataframe containing the files from index 53 to 65 to create a new dataframe with 'stationnumber' and its corresponding geocode.
    ```
-   # Choose columns to keep for station_list table
-    merge_df_dropped = merge_df[['start_station_id','end_station_id',
-                                 'start_station_name','end_station_name',
-                                 'start_lat','start_lng','end_lat','end_lng']]
-
-    # Take rows of 'start_station_id' and 'start_lat' which are not NaN.
-    df_cleaned = df[df['start_station_id'].notna()]
-    df_cleaned = df_cleaned[df_cleaned['end_station_id'].notna()]
-    station_table = df_cleaned[df_cleaned['start_lat'].notna()]
-    
     # Splitting data by start stations and end stations
     start_stations = station_table[['start_station_id','start_station_name','start_lat','start_lng']]
     end_stations = station_table[['end_station_id','end_station_name','end_lat','end_lng']]
