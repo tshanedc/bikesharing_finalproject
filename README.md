@@ -194,9 +194,6 @@ H0: The member type of riders is not related to the time of the day of the ride.
     number_of_trips.reset_index(drop=True)
     ```
 
-- Convert time date feature into a day of week column. 
-![image](https://user-images.githubusercontent.com/78698456/125535528-357a0d62-ebbe-4b9b-bff5-ff3186481461.png)
-
 Table #1 all_bikes_trips
 
 ![image](https://user-images.githubusercontent.com/78698456/125867516-cb3773d8-bef6-4fa0-bc48-196176f0c837.png)
