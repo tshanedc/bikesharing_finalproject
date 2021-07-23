@@ -1,5 +1,6 @@
 
 
+
 # FINAL PROJECT
 ## BIKESHARING SERVICES
 An Analysis of Public Bike Sharing Services in Washington DC to uncover growing membership trends for potential business expansion
@@ -253,6 +254,8 @@ Part 5: Evaluate/Improve Forecasting/Predictions
 
 ![Bike_trip](https://user-images.githubusercontent.com/78656720/126722999-464de71d-b2ed-4d98-aa1e-b752944f2e0c.png)
 ![normal_distribution](https://user-images.githubusercontent.com/78656720/126723035-1f18ea35-4597-437c-9d9c-358216f67c7c.png)
+
+![seasonal](https://user-images.githubusercontent.com/78656720/126723384-9ccd1886-7d97-43c4-86a2-7319f54ac476.png)
 
 
 ## DASHBOARD
