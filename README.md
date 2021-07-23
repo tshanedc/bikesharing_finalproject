@@ -194,9 +194,6 @@ H0: The member type of riders is not related to the time of the day of the ride.
     number_of_trips.reset_index(drop=True)
     ```
 
-- Convert time date feature into a day of week column. 
-![image](https://user-images.githubusercontent.com/78698456/125535528-357a0d62-ebbe-4b9b-bff5-ff3186481461.png)
-
 Table #1 all_bikes_trips
 
 ![image](https://user-images.githubusercontent.com/78698456/125867516-cb3773d8-bef6-4fa0-bc48-196176f0c837.png)
@@ -250,23 +247,35 @@ Part 4: Modeling/Forecasting
 
 Part 5: Evaluate/Improve Forecasting/Predictions 
 
-![Bike_trip](https://user-images.githubusercontent.com/78656720/126722999-464de71d-b2ed-4d98-aa1e-b752944f2e0c.png)
 
+
+![Bike_trip](https://user-images.githubusercontent.com/78656720/126722999-464de71d-b2ed-4d98-aa1e-b752944f2e0c.png)
 ![normal_distribution](https://user-images.githubusercontent.com/78656720/126723035-1f18ea35-4597-437c-9d9c-358216f67c7c.png)
 
 ![seasonal](https://user-images.githubusercontent.com/78656720/126723384-9ccd1886-7d97-43c4-86a2-7319f54ac476.png)
 
-![DF_test](https://user-images.githubusercontent.com/78656720/126724878-b165cfb6-63a2-4681-af04-f6d62a5decf3.png)
-
-
 
 ## DASHBOARD
-The image below shows the comparision of number of trips by membership status and the bike type. The table contains the 10 years data of bike trip in Washington DC. As we can see in the image the mebers bike morethan the casual in all bike types. 
-![trip_biketype](https://user-images.githubusercontent.com/78656720/126076728-15f14cb9-ced2-4afb-9c75-78831ec4003a.png)
-
 Visualization of Trip number change overtime by Member or Casual users
+Observations:
+1. The majority of trips have been taken by 'Member' users. 
+2. The trend of increase in 'Member' user ratio is sustained until 2019
+3. In general Q1 and Q4 experience lower bike trips overall
 ![image](Image/Membershi_Trip_overtime.png)
 
-Visualization of Station and Member or Casual Users
+Visualization of Station and Member or Casual Users:
+
+1. We see higher ratio of 'Casual' users at the stations located near Point of interest suchs as Lincoln Memorial, Museums, White House, etc...
+2. The 'Member' users are often starting their travel near Union Station, Dupont Circle, Mass Ave, Rhode Island Ave, Pennsylvania Ave, etc...
 ![image](Image/Membership_by_station.png)
 
+This visualization shows that the Ratio of Memberhsip user is higher in Weekday:
+
+1. The ratio of trips done by 'Member' users in weekday is 80-85%
+2. The ratio of trips done by 'Member' users in weekday is 64-65%
+![image](Image/Membership_Ratio_byDayofWeek.png)
+
+Future visualization ideas:
+
+    1. Evaluate how number of trips changes by staion depends on Weekday or Weekend
+    2. Analyze how time of day may affect the overall trip occurence and the ratio of 'Member' user.
