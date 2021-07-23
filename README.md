@@ -258,9 +258,9 @@ Part 5: Evaluate/Improve Forecasting/Predictions
 ## DASHBOARD
 Visualization of Trip number change overtime by Member or Casual users
 Observations:
-    1. The majority of trips have been taken by 'Member' users. 
-    2. The trend of increase in 'Member' user ratio is sustained until 2019
-    3. In general Q1 and Q4 experience lower bike trips overall
+1. The majority of trips have been taken by 'Member' users. 
+2. The trend of increase in 'Member' user ratio is sustained until 2019
+3. In general Q1 and Q4 experience lower bike trips overall
 ![image](Image/Membershi_Trip_overtime.png)
 
 Visualization of Station and Member or Casual Users
