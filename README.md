@@ -48,21 +48,10 @@ H0: The member type of riders is not related to the time of the day of the ride.
     
     # Take rows of 'Bike number' which are not NaN.
     df_cleaned = df_dropped[df_dropped['Bike number'].notna()]
-    
+   
     # Convert the 'started_at' and 'ended_at' columns to datetime data type
     df_cleaned['Start date'] = pd.to_datetime(df_cleaned['Start date'])
     df_cleaned['End date'] = pd.to_datetime(df_cleaned['End date'])
-
-    # Rename columns match with the other table
-    df_renamed = df_cleaned.rename(columns={'Start station number':'startsstationnumber',
-                                            'End station number':'endstationnumber',
-                                            'Start date':'startdate',
-                                            'End date':'enddate',
-                                            'Member type':'membertype',
-                                            'Bike number':'bikenumber',
-                                           })
-    df_renamed = df_renamed[['startsstationnumber','endstationnumber',
-                             'startdate','enddate','membertype','bikenumber']]
                              
     # Sort the table by the order of 'startdate' to list the trips in order of their ocuurence
     # then choose columns to keep for two tables: trip_later and rideable_type
@@ -93,18 +82,6 @@ H0: The member type of riders is not related to the time of the day of the ride.
     # Convert the 'started_at' and 'ended_at' columns to datetime data type
     df_cleaned['started_at'] = pd.to_datetime(df_cleaned['started_at'])
     df_cleaned['ended_at'] = pd.to_datetime(df_cleaned['ended_at'])
-    
-    # Rename columns match with the other table
-    df_renamed = df_cleaned.rename(columns={'start_station_id':'startsstationnumber',
-                                            'end_station_id':'endstationnumber',
-                                            'started_at':'startdate',
-                                            'ended_at':'enddate',
-                                            'member_casual':'membertype'
-                                           })
-    df_renamed = df_renamed[['rideable_type','startsstationnumber','endstationnumber',
-                             'startdate','enddate','membertype']]
-    # Change the first letter of 'membertype' to upper case to match with the other tables
-    df_renamed['membertype'] = df_renamed['membertype'].str.capitalize()
     
     # Sort the table by the order of 'startdate' to list the trips in order of their ocuurence
     # then choose columns to keep for two tables: trip_later and rideable_type
@@ -155,11 +132,7 @@ H0: The member type of riders is not related to the time of the day of the ride.
     # Splitting data by start stations and end stations
     start_stations = station_table[['start_station_id','start_station_name','start_lat','start_lng']]
     end_stations = station_table[['end_station_id','end_station_name','end_lat','end_lng']]
-    
-    # Rename columns to remove 'start' and 'end'
-    start_stations = start_stations.rename(columns={'start_station_id':'station_id','start_station_name':'station_name','start_lat':'lat','start_lng':'lng'})
-    end_stations = end_stations.rename(columns={'end_station_id':'station_id','end_station_name':'station_name','end_lat':'lat','end_lng':'lng'})
-    
+     
     # Combine the two tables together
     frames = [start_stations,end_stations]
     station_list = pd.concat(frames)
@@ -261,21 +234,24 @@ Observations:
 1. The majority of trips have been taken by 'Member' users. 
 2. The trend of increase in 'Member' user ratio is sustained until 2019
 3. In general Q1 and Q4 experience lower bike trips overall
+
 ![image](Image/Membershi_Trip_overtime.png)
 
 Visualization of Station and Member or Casual Users:
 
 1. We see higher ratio of 'Casual' users at the stations located near Point of interest suchs as Lincoln Memorial, Museums, White House, etc...
 2. The 'Member' users are often starting their travel near Union Station, Dupont Circle, Mass Ave, Rhode Island Ave, Pennsylvania Ave, etc...
+
 ![image](Image/Membership_by_station.png)
 
 This visualization shows that the Ratio of Memberhsip user is higher in Weekday:
 
 1. The ratio of trips done by 'Member' users in weekday is 80-85%
 2. The ratio of trips done by 'Member' users in weekday is 64-65%
+
 ![image](Image/Membership_Ratio_byDayofWeek.png)
 
 Future visualization ideas:
 
-    1. Evaluate how number of trips changes by staion depends on Weekday or Weekend
-    2. Analyze how time of day may affect the overall trip occurence and the ratio of 'Member' user.
+1. Evaluate how number of trips changes by staion depends on Weekday or Weekend
+2. Analyze how time of day may affect the overall trip occurence and the ratio of 'Member' user.
