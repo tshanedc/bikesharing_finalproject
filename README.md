@@ -191,6 +191,10 @@ Part 5: Evaluate/Improve Forecasting/Predictions
 
 
 ## DASHBOARD
+The interactive Tableau Dashboard is available at the following link: <https://public.tableau.com/views/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link>.
+
+Below are the explanations and screenshots of key visualizations.
+
 Visualization of Trip number change overtime by Member or Casual users
 Observations:
 1. The majority of trips have been taken by 'Member' users. 
