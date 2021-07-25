@@ -195,7 +195,8 @@ The interactive Tableau Dashboard is available at the following link: <https://p
 
 Below are the explanations and screenshots of key visualizations.
 
-Visualization of Trip number change overtime by Member or Casual users
+### Visualization of Trip number change overtime by Member or Casual users
+
 Observations:
 1. The majority of trips have been taken by 'Member' users. 
 2. The trend of increase in 'Member' user ratio is sustained until 2019
@@ -203,15 +204,17 @@ Observations:
 
 ![image](Image/Membershi_Trip_overtime.png)
 
-Visualization of Station and Member or Casual Users:
+### Visualization of Station and Member or Casual Users
 
+Observations:
 1. We see higher ratio of 'Casual' users at the stations located near Point of interest suchs as Lincoln Memorial, Museums, White House, etc...
 2. The 'Member' users are often starting their travel near Union Station, Dupont Circle, Mass Ave, Rhode Island Ave, Pennsylvania Ave, etc...
 
 ![image](Image/Membership_by_station.png)
 
-This visualization shows that the Ratio of Memberhsip user is higher in Weekday:
+### Visualizations of 'Member' user Ratio by Weekday
 
+Observations:
 1. The ratio of trips done by 'Member' users in weekday is 80-85%
 2. The ratio of trips done by 'Member' users in weekday is 64-65%
 
