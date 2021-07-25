@@ -113,6 +113,7 @@ The connection between tables, the fields that have been kept and the data types
 ![Inner_Join](https://user-images.githubusercontent.com/78656720/126045190-2021a9e1-b07f-40b8-9c1a-0a5cddf2b1ea.png)
 
 ## MACHINE LEARNING
+In the machine learning part of our project, we try to predict future growth of bikesharing in DC. Using timeseries data and ARIMA model the project performs trend analysis and predict future prospect of the bike sharing.
 
 ARIMA Model:
 Part 1: Preprocessing (Completed)
