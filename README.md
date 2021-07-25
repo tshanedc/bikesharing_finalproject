@@ -133,6 +133,26 @@ Looking at the above charts there is an upward trend and a recurring event where
 
   - **Stationarising the time series**
 
+ First, we check is our series is stationary or not. We use ADF(Augmented Dickey-Fuller) Test, as it can be used to determine the presennce of unit root in the seriesand also determine if the series is stationary or not.
+ *Null Hypothesis(H0)*: The series has a unit root
+ *Alternative Hypothesis(H1)*: The series has no unit root.
+ 
+ ![RMSE](https://user-images.githubusercontent.com/78656720/126905072-b7d43c22-ed06-4c2f-ae24-1ffcab11a250.PNG)
+
+As we can see the above image the p-value is greater than 0.05. Thus, we fail to regect our null hypothesis we can coclude out series is not stationary.
+
+To get a stationary series, we need to eliminate the trend and seasonality from the series.  we do that by taking a log of the series to reduce the magintude of the values and reduce the rising trend in the series. Then. we find the rolloing average of the series. 
+
+![Moving_average](https://user-images.githubusercontent.com/78656720/126905348-1106eb4e-98e3-47fe-ab7c-e79cc0aed6db.PNG)
+
+After finding the mean, we take the difference of the series and the mean at everypoint in the series.Therfore, we eliminate trends out of a series and obtain a more stationary series. Now, we can perform the Dickey-Fuller test(ADFT) once again to check if our series attained stationarity.
+
+Using the same rules of P-value we can clearly see our series attained stationarity.
+
+![Log_movingaverage](https://user-images.githubusercontent.com/78656720/126905518-3bfe4056-105c-4d25-b7d6-e3764073b324.PNG)
+
+
+
 
 ARIMA Model:
 Part 1: Preprocessing (Completed)
