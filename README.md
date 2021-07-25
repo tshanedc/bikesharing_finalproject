@@ -37,108 +37,49 @@ Q. How does type of bike affect membership type?
 H0: The member type of riders is not related to the time of the day of the ride. 
 
 ## ETL Process
+
+### Table1_all_bike_trips
 1. Process Capital Bikeshare bike trip data sets to create one big dataset that contains all 28M trips with followings columns: 'Trip Number,' 'Starts station number,' 'End station number,' 'start date,' 'end date,' and 'member type' to enable us review when and where each bike trip took place and whether it was done by a member or a casual user. 
     - Downloaded the total 65 Capital Bikeshare bike trip dataset available from `Index of bucket "capitalbikeshare-data"` page of Capital Bikeshare website.
     - Create an index of the 65 files as a csv file to allow python code able to call files by each file's directory and file name. Then, process files with index 0-52 and 53-65 separately as those files have different columns. The list can be refered to the csv file <Resources/capitalbikeshare_dataset_index.csv>.
-   ### Processing the files from Index 0-52
-   - The files have unique column 'Bike number' which define which bike was used for each trip.
-    ```
-    # Take rows of 'Bike number' which are not NaN.
-    df_cleaned = df_dropped[df_dropped['Bike number'].notna()]
-   
-    # Convert the 'started_at' and 'ended_at' columns to datetime data type
-    df_cleaned['Start date'] = pd.to_datetime(df_cleaned['Start date'])
-    df_cleaned['End date'] = pd.to_datetime(df_cleaned['End date'])
-                             
-    # Sort the table by the order of 'startdate' to list the trips in order of their ocuurence
-    # then choose columns to keep for two tables: trip_later and rideable_type
-    df = df_renamed.sort_values(by='startdate', ascending=True, na_position='first')
-    df_reset = df.reset_index(drop=True)
-    df_reset.index = df_reset.index + 1
-    df_reset['Trip_number'] = df_reset.index
-    columnsTitles = ['Trip_number','startsstationnumber','endstationnumber',
-                    'startdate','enddate','membertype']
-    trips_2010to202003 = df_reset.reindex(columns = columnsTitles)
-      
-    # Add column with Day of the Week
-    trips_2010to202003['weekday'] = trips_2010to202003['startdate'].dt.day_name()
-    ```
-    ### Processing the files from Index 53-65
-    - These files have unique column called 'rideable_type,' which describes which bike type was used. We extract this information separately to analyze how this variable affects the membership type of users.
-    ```
-    # Sort the table by the order of 'startdate' to list the trips in order of their ocuurence
-    # then choose columns to keep for two tables: trip_later and rideable_type
-    df = df_renamed.sort_values(by='startdate', ascending=True, na_position='first')
-    df_reset = df.reset_index(drop=True)
-    # we begin the index from '26433601' to make the dataframe sequential to the previous dataframe
-    df_reset.index = df_reset.index + 26433601
-    df_reset['Trip_number'] = df_reset.index
-    columnsTitles = ['Trip_number','startsstationnumber','endstationnumber',
-                    'startdate','enddate','membertype']
-    trips_202005to202105 = df_reset.reindex(columns = columnsTitles)
-  
-    # Add column with Day of the Week
-    trips_202005to202105['weekday'] = trips_202005to202105['startdate'].dt.day_name()
-    ```
-    ### Merge the two dataframes together to make all_bike_trips file
-    - merge the `trips_2010to202003.csv` and `trips_202005to202105.csv` files together 
+   - The files from index 0-52 have unique column 'Bike number' which define which bike was used for each trip.
+   - After cleaning the data and dropping unnecessary columns, output the dataframe as csv file `trips_2010to202003.csv`.
+   - The files with indexes 53-65 have unique column called 'rideable_type,' which describes which bike type was used. We extract this information separately to analyze how this variable affects the membership type of users.
+   - After cleaning the data and dropping unnecessary columns, output the dataframe as csv file `trips_202005to202105.csv`.
+   - Merge the `trips_2010to202003.csv` and `trips_202005to202105.csv` files together 
+   - Drop unnecessary columns, clean up NaN rows, remove mixed data type columns, convert datatype, and output the dataframe as `Table1_all_bike_trips.csv`.
  
+### Table2_bike_number and Table3_rideable_type
 2. Create two additional tables from `trips_2010to202003.csv` and `trips_202005to202105.csv` that represent 'Bike number' and 'rideable_type' of bikes respectively.
-    ### Output 'bike_number' table 
-    - Extract `bike_number` dataframe and ouput as csv from the previous extraction code.
-    ```
-    columnsTitlesBikeNumber = ['Trip_number','bikenumber','startsstationnumber',
-                             'endstationnumber','membertype']
-    bike_number = df_reset.reindex(columns = columnsTitlesBikeNumber)
-    ```
-    ### Output 'rideable_type' table 
-    - Extract `rideable_type` dataframe and ouput as csv from the previous extraction code.
-    ```
-    columnsTitlesRideableType = ['Trip_number','rideable_type','startsstationnumber',
-                             'endstationnumber','membertype']
-    rideable_type = df_reset.reindex(columns = columnsTitlesRideableType)
-    ```    
-    
+   - Extract `Table2_bike_number.csv` dataframe and ouput as csv from the `trips_2010to202003.csv`.
+   - Extract `Table3_rideable_type` dataframe and ouput as csv from the `trips_202005to202105.csv`.
+
+### Table4_station_list and Table5_station_active_dates
 3. Create a dataset with list of `station_id` and corresponding latitude and longitude by utilizing the datasets from April 2020 to May 2021. Note the most recent file available is May 2021 and Capital Bikeshare started to record geographic information since April 2020.
-    - Use the `merge_df` dataframe containing the files from index 53 to 65 to create a new dataframe with 'stationnumber' and its corresponding geocode.
-   ```
-    # Splitting data by start stations and end stations
-    start_stations = station_table[['start_station_id','start_station_name','start_lat','start_lng']]
-    end_stations = station_table[['end_station_id','end_station_name','end_lat','end_lng']]
-     
-    # Combine the two tables together
-    frames = [start_stations,end_stations]
-    station_list = pd.concat(frames)
-    station_list.sort_values(by='station_id', ascending=True, na_position='first')
-    
-    # Pick rows with only values
-    station_list = station_list[station_list['station_id'].notna()]
-    station_list['station_id'].isnull().sum()
-    station_list.sort_values(by='station_id', ascending=True, na_position='first')
-    
-    # Drop the duplicate entries of 'station_id'
-    station_list_cleaned = station_list.drop_duplicates(subset=['station_id'],
-                                 keep = 'first')
-    station_list_cleaned = station_list_cleaned.sort_values(by='station_id', 
-                                                            ascending=True).reset_index().drop(columns=['index'])
-   ```
+    - Use the files from index 53 to 65 to create a new dataframe with 'stationnumber' and its corresponding geocode.
+    - The output csv file `Table4_station_list` has columns `stationnumber`, `lat`, and `lng` to refer the location of each bike station.
+  
 4. Output an additional list of bike stations that displays the first day and the last day of their usage to identify if any stations have imbalance in number of data points due its length of operation.
-    ```
-    # From the 56M entries of trips, pick the first day and the last day
-    station_dates = station_list_all.groupby(['station_id'])['started_at'].agg(['first','last'])
-    
-    # add 'station_id' as first column
-    df = station_dates.assign(startstationnumber=station_id.values)
-    station_active_dates = df[['station_id','first','last']].reset_index(drop=True)
-    ```
+    - Use the `Table1_all_bike_trips.csv` and pick the first time and the last time that each `startstationnumber` appears in the list
+    - Output the dataframe with `startstationnumber`, `first`, and `last` as a csv file `Table5_station_active_dates.csv`.
+
+### Table6_number_of_trips
 5.  From the `all_bike_trips.csv` file, extract an additional dataframe that displays number of trips took by each staion number.
-    ```
-    # Count how many times the 'startsstationnumber' appears in the list to count the number of trips took place
-    number_of_trips = pd.DataFrame(all_bike_trips['startsstationnumber'].value_counts())
-    number_of_trips = number_of_trips.rename(columns={'startsstationnumber':'occurence'})
-    number_of_trips['startsstationnumber'] = number_of_trips.index
-    number_of_trips.reset_index(drop=True)
-    ```
+    - Utilize `value_counts()` method and list how many times does each station appear over the 28M trips.
+    - Output the dataframe with `startstationnumber` and its `occurence` as a csv file `Table6_number_of_trips.csv`.
+
+### Table7_member_trips and Table8_casual_trips
+7.  Create two separate datasets listing trips done by 'Member' users and 'Casual' users separately.
+    - Refer to the `Table1_all_bike_trips.csv` and pick the rows with `membertype` being `Member` and `Casual` separately into two dataframes: `Table7_member_trips.csv` and `Table8_casual_trips.csv`.
+
+### Table9_ratio_df and Table10_dayofweek_ratio
+8.  Create a table listing the ratio of trips done by 'Member' users over the all trips have done at each station.
+    - Refer to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files for number of trips done at each station by `Member` and `Casual` using `value_counts()`. Then, calculate the ratio based on those values to figure out the ratio of `Member` usage by each station.
+    - Output the resulted dataframe as `Table9_ratio_df.csv` file.
+    
+9.  Create a table listing the ratio of trips done by 'Member' users over the all trips by each day of week.
+    - Refer to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files and figure out the ratio of `Member` users by each day of week.
+    - Output the resulted dataframe as `Table10_dayofweek_ratio.csv` file.
 
 Table #1 all_bikes_trips
 
