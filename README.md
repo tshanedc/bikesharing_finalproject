@@ -72,7 +72,7 @@ H0: The member type of riders is not related to the time of the day of the ride.
 7.  Create two separate datasets listing trips done by 'Member' users and 'Casual' users separately.
     - Refer to the `Table1_all_bike_trips.csv` and pick the rows with `membertype` being `Member` and `Casual` separately into two dataframes: `Table7_member_trips.csv` and `Table8_casual_trips.csv`.
 
-### Table9_ratio_df and Table10_dayofweek_ratio
+### Table9_ratio_df, Table10_dayofweek_ratio, and Table11_station_dayofweek_ratio
 8.  Create a table listing the ratio of trips done by 'Member' users over the all trips have done at each station.
     - Refer to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files for number of trips done at each station by `Member` and `Casual` using `value_counts()`. Then, calculate the ratio based on those values to figure out the ratio of `Member` usage by each station.
     - Output the resulted dataframe as `Table9_ratio_df.csv` file.
@@ -80,6 +80,10 @@ H0: The member type of riders is not related to the time of the day of the ride.
 9.  Create a table listing the ratio of trips done by 'Member' users over the all trips by each day of week.
     - Refer to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files and figure out the ratio of `Member` users by each day of week.
     - Output the resulted dataframe as `Table10_dayofweek_ratio.csv` file.
+
+10. Create a table listing the bike stations and their ratio of 'Member' usage for each day of week.
+    - Refer to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files and calculate the number of `Member` usages and `Casual` usages for each bike station on each day of week.
+    - Utilize the calculated dataframes and output a new dataframe with columns of `startsstationnumber`, `weekday`, and the `ratio` of `Member` usage as a csv file `Table11_station_dayofweek_ratio.csv`.
 
 Table #1 all_bikes_trips
 
