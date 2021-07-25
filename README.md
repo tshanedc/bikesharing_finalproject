@@ -117,11 +117,11 @@ In the machine learning part of our project, we try to predict future growth of 
 This project tries to achive two main goals in this time series analysis. First, it identifies the sequence of observations , and second, predict the future values of the the timeseries univeriate variable(**Number of Trips**).
 
  - **Visualizing time series**
- Looking at below chart we can see the upward trend of *Number of trips* for the last from 2010 till 2018.
+ Looking at below chart we can see the upward trend of *Number of trips* from 2010 till 2018.
  
 ![Bike_Trip_timeseries](https://user-images.githubusercontent.com/78656720/126903853-9a9e3504-207f-4bb7-98a9-63f2cbdba308.PNG)
 
-Regarding timeseries analysis our series needs to be stationary(i.e *Number of trips* shouls have a constant mean, variance and covariance). However, as we can see the above chart the mean is not constant.This implies our series is not stationary.
+Regarding timeseries analysis our series needs to be stationary (i.e *Number of trips* should have a constant mean, variance and covariance). However, as we can see the above chart,the mean is not constant.This implies our series is not stationary.
 
 ![Scatter_Biketrip](https://user-images.githubusercontent.com/78656720/126904090-a0e5aa5b-5212-46de-9230-d60973eeb122.PNG)
 
@@ -133,15 +133,13 @@ Looking at the above charts there is an upward trend and a recurring event where
 
   - **Stationarising the time series**
 
- First, we check is our series is stationary or not. We use ADF(Augmented Dickey-Fuller) Test, as it can be used to determine the presennce of unit root in the seriesand also determine if the series is stationary or not.
+ First, we check if our series is stationary or not. We use ADF(Augmented Dickey-Fuller) Test, as it can be used to determine the presennce of unit root in the series and also determine if the series is stationary or not.
  *Null Hypothesis(H0)*: The series has a unit root
  *Alternative Hypothesis(H1)*: The series has no unit root.
  
  ![RMSE](https://user-images.githubusercontent.com/78656720/126905072-b7d43c22-ed06-4c2f-ae24-1ffcab11a250.PNG)
 
-As we can see the above image the p-value is greater than 0.05. Thus, we fail to regect our null hypothesis we can coclude out series is not stationary.
-
-To get a stationary series, we need to eliminate the trend and seasonality from the series.  we do that by taking a log of the series to reduce the magintude of the values and reduce the rising trend in the series. Then. we find the rolloing average of the series. 
+As we can see the above image the p-value is greater than 0.05. Thus, we fail to regect our null hypothesis.We can coclude ourseries is not stationary. To get a stationary series, we need to eliminate the trend and seasonality from the series.  we do that by taking a log of the series to reduce the magintude of the values and reduce the rising trend in the series. Then,we find the rolloing average of the series. 
 
 ![Moving_average](https://user-images.githubusercontent.com/78656720/126905348-1106eb4e-98e3-47fe-ab7c-e79cc0aed6db.PNG)
 
