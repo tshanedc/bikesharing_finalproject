@@ -114,6 +114,19 @@ The connection between tables, the fields that have been kept and the data types
 
 ## MACHINE LEARNING
 In the machine learning part of our project, we try to predict future growth of bikesharing in DC. Using timeseries data and ARIMA model the project performs trend analysis and predict future prospect of the bike sharing.
+This project tries to achive two main goals in this time series analysis. First, it identifies the sequence of observations , and second, predict the future values of the the timeseries univeriate variable(**Number of Trips**).
+ - Visualizing time series
+ Looking at below chart we can see the upward trend of *Number of trips* for the last from 2010 till 2018.
+ 
+![Bike_Trip_timeseries](https://user-images.githubusercontent.com/78656720/126903853-9a9e3504-207f-4bb7-98a9-63f2cbdba308.PNG)
+
+Regarding timeseries analysis our series needs to be stationary(i.e *Number of trips* shouls have a constant mean, variance and covariance). However, as we can see the above chart the mean is not constant.This implies our series is not stationary.
+
+![Scatter_Biketrip](https://user-images.githubusercontent.com/78656720/126904090-a0e5aa5b-5212-46de-9230-d60973eeb122.PNG)
+To get a more clear insight of our timeseries data, we will plot the **level**, **Trend**,**Seasonality**, and **Noise** charts. These charts will explain the average value in the sseries, the increasing or decreasing value in the series, the repeating short-term cycle in the series, and the random variation in the series erspectively.
+![Trend_Seaasonality](https://user-images.githubusercontent.com/78656720/126904291-004881c1-7a03-4cd2-b39e-cdad2fad1b88.PNG)
+
+
 
 ARIMA Model:
 Part 1: Preprocessing (Completed)
