@@ -8,7 +8,13 @@ An Analysis of Public Bike Sharing Services in Washington DC to uncover growing 
 ## REASONS FOR SELECTING TOPIC
 We want to offer a deeper analysis to investors and the community on the growing membership trends of Public Bike Sharing Services in Washington DC in order to motivate investors to expand the availability of bike stations 
 
-{Mair will insert additional content}
+The primary incentive to investors in the bike sharing market is the significant revenue gained from an economic model which includes:
+1. Data mining -- marketing and analysis of users' riding behavior data captured by the app used to locate and unlock the bikes and GPS complement data sets collected by taxi and public transportation systems.
+2. Advertising -- high commercial value to retail businesses, restaurants to place ads on the physical bikes and on the apps used to locate and unlock the bikes.
+3. Interest on deposits -- Interest earned from memberships is a huge income generating asset to invest.
+
+A 2021 bike sharing market growth, trend, and forecast report by market intelligence and advisory firm Mordor Intelligence. 
+![image](Image/bps_forecast.png) 
 
 ## VARIABLES TO CONSIDER
 - Location of Bike Station (Latitude, Longitude, and Zip code)
@@ -160,29 +166,15 @@ Using the same rules of P-value we can clearly see our series attained stationar
 ![Log_movingaverage](https://user-images.githubusercontent.com/78656720/126905518-3bfe4056-105c-4d25-b7d6-e3764073b324.PNG)
 
 
+## PROPHET MODEL:
 
+This time series forecasting algorithm was used to predict 'Member' growth for the next months.
 
-ARIMA Model:
-Part 1: Preprocessing (Completed)
-1) Read in 'all_bike' csv
-- Change Trip_number col to lowercase
-1) Read in 'bike_type' csv
-- Encode bike types
-- Rename cols
-1) Merge 'all_bike' and 'bike_type'
-2) Drop unnecessary cols
-3) Change 'startdate' from object to datetime
-4) Set index to 'startdate'
+### Preprocessing
+![image](Image/prophet_preprocessing.png)
 
-Part 2: Split Train_Test
-
-Part 3: Check for Stationarity
-
-Part 4: Modeling/Forecasting
-
-Part 5: Evaluate/Improve Forecasting/Predictions 
-
-
+### Train and Fit the Model
+![image](Image/prophet_montly1.png)
 
 ## DASHBOARD
 The interactive Tableau Dashboard is available at the following link: <https://public.tableau.com/views/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link>.
