@@ -1,44 +1,140 @@
-## ETL Process
 
-### Table1_all_bike_trips
-1. Process Capital Bikeshare bike trip data sets to create one big dataset that contains all 28M trips with followings columns: 'Trip Number,' 'Starts station number,' 'End station number,' 'start date,' 'end date,' and 'member type' to enable us review when and where each bike trip took place and whether it was done by a member or a casual user. 
-    - Downloaded the total 65 Capital Bikeshare bike trip dataset available from `Index of bucket "capitalbikeshare-data"` page of Capital Bikeshare website.
-    - Create an index of the 65 files as a csv file to allow python code able to call files by each file's directory and file name. Then, process files with index 0-52 and 53-65 separately as those files have different columns. The list can be refered to the csv file <Resources/capitalbikeshare_dataset_index.csv>.
-   - The files from index 0-52 have unique column 'Bike number' which define which bike was used for each trip.
-   - After cleaning the data and dropping unnecessary columns, output the dataframe as csv file `trips_2010to202003.csv`.
-   - The files with indexes 53-65 have unique column called 'rideable_type,' which describes which bike type was used. We extract this information separately to analyze how this variable affects the membership type of users.
-   - After cleaning the data and dropping unnecessary columns, output the dataframe as csv file `trips_202005to202105.csv`.
-   - Merge the `trips_2010to202003.csv` and `trips_202005to202105.csv` files together 
-   - Drop unnecessary columns, clean up NaN rows, remove mixed data type columns, convert datatype, and output the dataframe as `Table1_all_bike_trips.csv`.
+### Table 1: "all_bike_trips"
+1. For the first table, we created an index of the 66 csv files to allow python to call the files by each individual directory and file name. 
+2. Then, the files were processed. From index 0-52 and 53-65 separately as those files have different columns. The resulting CSV file can be refered to as: <Resources/capitalbikeshare_dataset_index.csv>.
+3. The data points from index 0-52 had a unique column named 'Bike number', which showed which bike was used for each trip.
+4. After cleaning the data and dropping unnecessary columns, the output was recorded as a dataframe under a CSV file called: `trips_2010to202003.csv`.
+5. The data points from index 53-65 had a unique column named 'rideable_type,' which describes which bike type was used. We extracted this information separately to analyze how this variable affects the membership type of users.
+6. After cleaning the data and dropping unnecessary columns, the output was recorded as a dataframe under a CSV file called: `trips_202005to202105.csv`.
+7. Then, both resulting CSV filees were merged (the `trips_2010to202003.csv` and `trips_202005to202105.csv`).
+8. Lastly, from the merged file, unnecessary columns were dropped, NaN rows cleaned up, mixed data type columns removed and datatype converted to give us our `Table1_all_bike_trips.csv`.
+
+## Visual representation of the output:
+Table #1 all_bikes_trips
+
+![image](https://user-images.githubusercontent.com/78698456/125867516-cb3773d8-bef6-4fa0-bc48-196176f0c837.png)
  
-### Table2_bike_number and Table3_rideable_type
-2. Create two additional tables from `trips_2010to202003.csv` and `trips_202005to202105.csv` that represent 'Bike number' and 'rideable_type' of bikes respectively.
-   - Extract `Table2_bike_number.csv` dataframe and ouput as csv from the `trips_2010to202003.csv`.
-   - Extract `Table3_rideable_type` dataframe and ouput as csv from the `trips_202005to202105.csv`.
+### Table 4: station_list 
+1. Noting that from April 2020 upto May 2021 is the time range in which Capital Bikeshare started to record geographic information, we created a dataset with the list of data for `station_id` which provides the latitude and longitude of each station.
+2. We used the data from index 53 to 65 to create a new dataframe with 'stationnumber' and its corresponding geocode.
+3. The output was a CSV file named: `Table4_station_list` which held columns: `stationnumber`, `lat`, and `lng` to refer to the location of each bike station.
 
-### Table4_station_list and Table5_station_active_dates
-3. Create a dataset with list of `station_id` and corresponding latitude and longitude by utilizing the datasets from April 2020 to May 2021. Note the most recent file available is May 2021 and Capital Bikeshare started to record geographic information since April 2020.
-    - Use the files from index 53 to 65 to create a new dataframe with 'stationnumber' and its corresponding geocode.
-    - The output csv file `Table4_station_list` has columns `stationnumber`, `lat`, and `lng` to refer the location of each bike station.
-  
-4. Output an additional list of bike stations that displays the first day and the last day of their usage to identify if any stations have imbalance in number of data points due its length of operation.
-    - Use the `Table1_all_bike_trips.csv` and pick the first time and the last time that each `startstationnumber` appears in the list
-    - Output the dataframe with `startstationnumber`, `first`, and `last` as a csv file `Table5_station_active_dates.csv`.
+## Visual representation of the output:
+Table #4 Station List
 
-### Table6_number_of_trips
-5.  From the `all_bike_trips.csv` file, extract an additional dataframe that displays number of trips took by each staion number.
-    - Utilize `value_counts()` method and list how many times does each station appear over the 28M trips.
-    - Output the dataframe with `startstationnumber` and its `occurence` as a csv file `Table6_number_of_trips.csv`.
+![image](Image/4_station_list_table.png)
 
-### Table7_member_trips and Table8_casual_trips
-7.  Create two separate datasets listing trips done by 'Member' users and 'Casual' users separately.
-    - Refer to the `Table1_all_bike_trips.csv` and pick the rows with `membertype` being `Member` and `Casual` separately into two dataframes: `Table7_member_trips.csv` and `Table8_casual_trips.csv`.
+### Table 6: number_of_trips
+1.  From the `all_bike_trips.csv` file, we extracted an additional dataframe to display the number of trips taken in each staion number.
+2.  We used the `value_counts()` method to list how many times each station appears over the 28M trips recorded in our dataset.
+3.  The output was a dataframe with `startstationnumber` and `occurence` columns which was saved as a CSV file named: `Table6_number_of_trips.csv`.
 
-### Table9_ratio_df and Table10_dayofweek_ratio
-8.  Create a table listing the ratio of trips done by 'Member' users over the all trips have done at each station.
-    - Refer to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files for number of trips done at each station by `Member` and `Casual` using `value_counts()`. Then, calculate the ratio based on those values to figure out the ratio of `Member` usage by each station.
-    - Output the resulted dataframe as `Table9_ratio_df.csv` file.
-    
-9.  Create a table listing the ratio of trips done by 'Member' users over the all trips by each day of week.
-    - Refer to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files and figure out the ratio of `Member` users by each day of week.
-    - Output the resulted dataframe as `Table10_dayofweek_ratio.csv` file.
+## Visual representation of the output:
+Table #6 Station List
+
+![image](Image/6_number_of_trips.png)
+
+### Table 7: member_trips and Table 8: casual_trips
+1.  We created two separate datasets listing the trips done sorted by 'Member' and 'Casual' users separately.
+2.  We used the `Table1_all_bike_trips.csv` and picked the `membertype` column to then separate them by `Member` and `Casual` separately and save them in two dataframes named: `Table7_member_trips.csv` and `Table8_casual_trips.csv` respectively.
+
+## Visual representation of the output:
+Table #7 Member Trips
+
+![image](Image/7_member_trips.png)
+
+Table #8 Casual Trips
+
+![image](Image/8_casual_trips.png)
+
+### Table 9: ratio_df, Table 10: dayofweek_ratio, and Table 12: station_dayofweek_ratio_triptotal
+1. We created a table listing the ratio of trips done by 'Member' users over all the recorded trips in each station.
+2. We refered to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files to collect number of trips done at each station. We sorted each of those done by `Member` and `Casual` using the `value_counts()` method. 
+3. Then, we calculated the ratio based on those values to figure out the ratio of `Member` usage by each station.
+4. The output was a dataframe saved as `Table9_ratio_df.csv` file.
+
+5. We create a table listing the ratio of trips done by 'Member' users over the all th recorded trip by each day of week.
+6. We refered to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files to retrieve the ratio of `Member` users by each day of week.
+7. The output was a dataframe saved as `Table10_dayofweek_ratio.csv` file.
+
+8. We create a table listing the bike stations and their ratio of 'Member' usage for each day of week.
+9. We refered to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files to calculate the number of `Member` usages and `Casual` usages for each bike station on each day of week.
+10. We utilized the calculated dataframes and had for an output a new dataframe with columns of `startsstationnumber`, `weekday`, and the `ratio` of `Member` usage along `trip_total` to evaluate the significance. This CSV file was saved as `Table12_station_dayofweek_ratio_triptotal.csv`.
+
+## Visual representation of the output:
+Table #9 Ratio df
+
+![image](Image/9_ratio_df.png)
+
+Table #10 Dayofweek Ratio
+
+![image](Image/10_dayofweek_ratio.png)
+
+Table #12: Station Dayofweek Ratio TripTotal
+
+![image](Image/12_station_dayofweek_ratio_triptotal.png)
+
+
+### Table 15: merge_covid
+1. We created a table that categorizes both the total number of trips and the ratio of trips done by 'Member' users by **the status: pre and post Covid** and by **Weekday or Weekend**.
+2. We refered to the `Table7_member_trips.csv` and `Table8_casual_trips.csv` files again and grouped data from 2019/01-2019/12 as **pre-Covid** and 2020/01-2021/05 as **post-Covid**.
+3. Then, merged both dataframes originated from `Table7_member_trips.csv` with the label `member` and `Table8_casual_trips.csv` with the label `casual`.
+
+## Visual representation of the output:
+Table #15 Merge Covid
+
+![image](Image/15_merge_covid.png)
+
+# RESULTS OF ANALYSIS
+
+## DASHBOARD
+Note: To access the interactive Tableau Dashboard click on the following link: 
+
+[link to Tableau Dashboard](https://public.tableau.com/views/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+
+With the created tables, we used tableau tool to develop visual content to help us uncover the rationality of bike riders. 
+
+With our first visual we uncovered the following:
+
+### Number of trips by registered and casual riders
+When crossing the number of trips done by both registered and casual riders we got the following visual:
+
+![image](Image/Membershi_Trip_overtime.png)
+
+As it can be seen, indeed the mayority of bike trips have been taken by member riders (registered) than by casual ones. This observation is a very predictive pattern considering that by thinking of 'membership' already speaks of a very loyal and frequent user audience.
+
+Also, the 'member' type ratio increased steadily until 2019. This is also a predictive behaviour considering that year 2020, in the early months, was struck by the covid 19 pandemic.
+
+Lastly, this visual also shows a predictive behaviour that is a low registry of bike rides during the 1st and 4th Quarters of the year. These timeframe corresponds to the winter months.
+
+
+### Stations per member and casual users
+Our second visual crossed the stations of the bike service per type of member.
+
+![image](Image/Membership_by_station.png)
+
+As the dashboard shows, the stations with greater 'casual' users are those located closest to Points of Interest, such as the national mall, white house, tidal basin and 14th St. This is a predictive behavior as tourists would be less likely to be interested in obtaining a membership of a service that, once they fly back home, will not use again.
+
+Secondly, the dasbhboard shows that stations with greater 'member' type of users are found closest to the corporate hubs, such as Union Station, Dupont Circle, Massachussets avenue, Rhode Island Avenue, Pennsylvania Avenue, Logan Circle.
+
+An additional aspect that we noticed is that stations that show a greater commute advantage showed higher numbers of 'member' riders. 
+This prediction was shown accurate when looking at the station located in 15th St & P. The station is located in a convenient city route which (1) counts with a dedicated bike lane and (2) connects conveniently Columbia Heights with dowtown (H Street) therefore being a strategic commute route.
+
+
+### 'Member' type by weekday and weekend ratio
+A third visual crossed 'member' type by weekday and weekend ratio:
+
+![image](Image/Membership_Ratio_byDayofWeek.png)
+
+This visual also confirmed the rationality of riders' choice by showing that 'member' users use up to 80-85% more the service during the week than on the weekend, which falls to a 64-65%.
+
+This is also a predictive behavior as, if 'member' type riders use the service more for commute and transportation to work, the weekends will certainly show a downfall in usage as those are not working days.
+
+A takeway from this visual is that eventhough on weekends, the bike service is still the prefered means of transportation, even for those with a permanent residency in the city.
+
+Because of time constraint we were no longer able to dive deeper into this visual however, the team suggests the following analysis in future future:
+
+1. Evaluate how number of trips change by staion depending on the day of the week (Weekday or Weekend) and
+2. Analyze how the time of day may affect the overall trip occurence and the ratio of 'Member' type rider.
+
+
