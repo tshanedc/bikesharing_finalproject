@@ -269,3 +269,17 @@ Part 5: Evaluate/Improve Forecasting/Predictions
 
 
 ## RECOMMENDATIONS FOR FUTURE ANALYSIS
+The data crossed and visualized confirmed our hypothesis of predictability of the service and the rider's behavior.
+
+Plenty of hypothesis and assumptions were established for the riders and the service. However all those ideas that we thought to be rational (or were thought to have a corelation) turned out to be flawed after the analysis.
+
+Users of the bike sharing service behave exactly the way the service would expect them to behave. They behave rationaly depending on the conditions of their surrounding. Member riders ride more during weekdays than weekends, casual members explore more the 'point of interest' areas than the member riders, riders, in general, ride less during winter than summer and COVID pandemic brought a valley in the usage graphs. 
+
+The predictability enclosed in the data makes it easier for the decision makers of the service to make solid decisions. 
+
+Considering the pandemic scneario, an opportunity area for the service maximization could be:
+
+- Explore the establishment of a contingency plan where some resources can be saved, for example:
+- Explore the adjustment of membership costs in order to expand enrollment,
+- Explore the reduction of bike stations to ensure that (1) there is more bike availability in those most used at the moment, (2) the less used bike stations are temporarily suspended to decrease maintenance costs.
+
