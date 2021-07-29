@@ -171,7 +171,7 @@ Using the same rules of P-value we can clearly see our series attained stationar
 
 
 
-ARIMA Model:
+Prophet Model:
 Part 1: Preprocessing (Completed)
 1) Read in 'all_bike' csv
 - Change Trip_number col to lowercase
