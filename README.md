@@ -277,6 +277,12 @@ Part 4: Modeling/Forecasting
 Part 5: Evaluate/Improve Forecasting/Predictions 
 
 
+![Mair1](Mair1.png)
+
+
+
+![Mair2](Mair2.png)
+
 
 ## RECOMMENDATIONS FOR FUTURE ANALYSIS
 The data crossed and visualized confirmed our hypothesis of predictability of the service and the rider's behavior.
