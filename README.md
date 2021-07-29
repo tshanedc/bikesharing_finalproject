@@ -153,7 +153,7 @@ Table #5 Station List with its active dates
 ## DASHBOARD
 Note: To access the interactive Tableau Dashboard click on the following link: <https://public.tableau.com/views/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link>.
 
-[link to Tableau Story](hhttps://public.tableau.com/views/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+[link to Tableau Story](https://public.tableau.com/views/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
 
 With the created tables, we used tableau tool to develop visual content to help us uncover the rationality of bike riders. 
 
