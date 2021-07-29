@@ -253,10 +253,7 @@ Using the same rules of P-value we can clearly see our series attained stationar
 
 ![Log_movingaverage](https://user-images.githubusercontent.com/78656720/126905518-3bfe4056-105c-4d25-b7d6-e3764073b324.PNG)
 
-![image](https://user-images.githubusercontent.com/78656720/127579191-f6f979ff-170c-4791-8164-e9dd67f212a1.png)
 
-
-![image (1)](https://user-images.githubusercontent.com/78656720/127579232-f2983482-80c2-4cc9-ab6e-1cb05c538938.png)
 
 
 Prophet Model:
