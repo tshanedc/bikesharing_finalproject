@@ -1,47 +1,74 @@
+# Final Project
 
+Team 5: Thomas Shane, Paola Escamilla, Takuma Koide, Habtamu Tikuye, Mair Manson, Derrick Amegashie
 
+## Content
+### Selected Topic
+An analysis of Capital Bike Share service in Washington D.C.
 
-# FINAL PROJECT
-## BIKESHARING SERVICES
-An Analysis of Public Bike Sharing Services in Washington DC to uncover growing membership trends for potential business expansion
+### Reasons for Topic Selection
+The bike sharing service has become increasingly popular in the main cities of the U.S. The possibility of mobilizing without schedule and traffic constraints appeals to the general public. This service also offers different payment tiers that adjust conveniently to the riders’ income. 
 
-## REASONS FOR SELECTING TOPIC
-We want to offer a deeper analysis to investors and the community on the growing membership trends of Public Bike Sharing Services in Washington DC in order to motivate investors to expand the availability of bike stations 
+The innovation focus that the service brings to the way we understand and see transportation became of interest to the team members. By engaging in conversations between ourselves we came to creative ideas, possibilities and hypotheses that caught our complete attention. We discussed income, gender, age and security however, as our analysis developed we uncovered that the riders of the bike sharing service, and the service as such, follows a strictly predictive behavior.
 
-{Mair will insert additional content}
+All the hypotheses that we came to, such as: (1) Is the service, through its cost, excluding low income riders from usage? (2) Is there a gender bias in the service? (3) Are bike stations less likely to be opened in neighbourhoods considered risky/insecure? and (4) Are the owners of the service disregarding the growth opportunities behind the “age” feature?, slowly faded from our analysis by uncovering, through the data retrieved, that the riders strongly behave as one would expect them to behave.
 
-## VARIABLES TO CONSIDER
-- Location of Bike Station (Latitude, Longitude, and Zip code)
-- User types: Member and Casual
-- Bike routes: Popular and Unpopular
-- User number: Weekday and Weekend
-- Time of day of the ride
+With this said, our analysis question transformed to **“Are Capital Bike Share riders rational actors?”**
 
-## DESCRIPTION OF THE SOURCE DATA
-For our analysis, we are using secondary data which has already been collected by the capital bike share website (https://www.capitalbikeshare.com/system-data). The data was stored in CSV format and we were able to find data from 2010 to 2021. 
+Knowing that a rational actor is an individual who uses rational calculations to make choices and achieve their own personal objectives, he or she will use rational calculations and choices, to satisfy their self-interest and receive the greatest benefit and satisfaction, given the limited option they have available.
 
-For the years 2010 and 2011 the daily bike ride information of the whole year was gathered in a unique CSV file. From 2012 to 2017, the daily bike ride information was gathered in quarterly arranged CSV files and from 2018 to 2021 the bike ride information was collected in monthly CSV files. Data for the month of april 2020 was not available and year 2021 cut in the month of may.
+With this introduction to the team’s thinking process, we present the steps to our analysis to sustain our hypotheses:
 
-In total, our final data was 66 CSV files with over 26,000,000 rows and 8 columns each.
+### Description of Source Data
+Our work used secondary data already collected by the capital bike share service through their website: https://www.capitalbikeshare.com/system-data. 
 
-### BikeSharing Data:
-- Capital Bikshare (Washington D.C.) from 2010 - 05/2021. Retrieved from: https://s3.amazonaws.com/capitalbikeshare-data/index.html
+The data was stored in CSV format files, from 2010 to 2021. 
 
-## QUESTIONS TO ANSWER
-Q. How does time of day influences the member type of riders in Washington D.C.?
+For the years 2010 and 2011, the daily bike ride information was gathered in a unique CSV file. From 2012 to 2017, the daily bike ride information was gathered in quarterly arranged CSV files and, for the remaining years,  the bike ride information was collected in monthly arranged CSV files.
 
-Q. How does the weekday/weekend difference influence the membership type of riders in Washington D.C.?
+It must be highlighted that some months had to be disregarded from the analysis due to a lack of data (e.g. year 2020 skipped the month of april and year 2021 ended in may).
 
-Q. How does type of bike affect membership type?
+In total, our final dataset was created by taking a total of 66 CSV files with over 26,000,000 rows and 8 columns each.
 
-H0: The member type of riders is not related to the time of the day of the ride. 
+### Analysis Question
+As previously introduced, our analysis question is **“Are Capital Bike Share riders rational actors?”**.
+
+To sustain, or refute, our hypothesis the analysis dived into:
+- Total bike rides per year
+- Distribution of ‘member type’ per station
+- Time of the day and day of the week of the ride
+- Location of Bike stations (lat, long)
+
+### Description of Data Exploration Phase
+The data exploration phase started with a review of the websites of the known bike share services in different cities in the United States. We were able to find available data for the cities of New York, Chicago, Pittsburgh, Boston and Washington D.C. 
+
+Even though all cities showed consistent data we decided to stay with Washington D.C. considering this is the city where all team members live and therefore, we could understand better. 
+
+The data retrieved in the capital bike share website was consistent and showed quality. Each CSV file had the same features/columns aside from 2020 and 2021 where we found a couple of new columns added. For the purposes of our analysis, we disregarded those new addings to maintain the same consistency of the information.
+
+The size of the data collected for each year was considerably large. The amount increased our reliability to the data as we were able to draw some time series in our work. 
+
+## DATABASE INTEGRATION
+
+Before arriving to the ETL Process, and once our data was reviewed and understood, a database, and its relationships, were established to facilitate the transformation process of the data. 
+
+After identifying and organizing the raw data extracted from the capital bike share website, we established five tables to integrate our database: 
+
+![Final_ERD](https://user-images.githubusercontent.com/78656720/126044898-bf43e200-e51a-45a5-83e4-865fc1d466df.png)
+
+These five tables were loaded into a PostgerSQL database. While working on the data analysis we also extracted different tables using SQL join query. In the image below an example is shown of a table created by "Inner join" from our *station_list* and *station_list_active*.
+
+![Inner_Join](https://user-images.githubusercontent.com/78656720/126045190-2021a9e1-b07f-40b8-9c1a-0a5cddf2b1ea.png)
+
 
 ## ETL Process
-The purpose of the ETL process was to create one big dataset from all the individual CSV files. 
+Once with the information identified, our analysis started with an ETL process which aimed to create one big dataset from all the individual CSV files. 
  
 The final dataset contained all 28M trips and was conformed by the following columns: 'Trip Number,' 'Starts station number,' 'End station number,' 'start date,' 'end date,' and 'member type'.
 
-### Table 1: all_bike_trips
+From this unified dataset, a series of tables were extracted. The processes is described below:
+
+### Table 1: "all_bike_trips"
 1. For the first table, we created an index of the 66 csv files to allow python to call the files by each individual directory and file name. 
 2. Then, the files were processed. From index 0-52 and 53-65 separately as those files have different columns. The resulting CSV file can be refered to as: <Resources/capitalbikeshare_dataset_index.csv>.
 3. The data points from index 0-52 had a unique column named 'Bike number', which showed which bike was used for each trip.
@@ -60,7 +87,6 @@ Table #1 all_bikes_trips
 1. From the previously created CSV files, `trips_2010to202003.csv` and `trips_202005to202105.csv`, two additional tables were creaated to represent 'Bike number' and 'rideable_type' respectively.
 2. From the `trips_2010to202003.csv` we were able to extract a second dataframe named: `Table2_bike_number.csv` 
 3. From the `trips_202005to202105.csv` we extracted a third dataframe named: `Table3_rideable_type`
-
 
 ## Visual representation of the output:
 Table #2 bike_number
@@ -96,13 +122,11 @@ Table #5 Station List with its active dates
 ## Visual representation of the output:
 
 
-
 ### Table 7: member_trips and Table 8: casual_trips
 1.  We created two separate datasets listing the trips done sorted by 'Member' and 'Casual' users separately.
 2.  We used the `Table1_all_bike_trips.csv` and picked the `membertype` column to then separate them by `Member` and `Casual` separately and save them in two dataframes named: `Table7_member_trips.csv` and `Table8_casual_trips.csv` respectively.
 
 ## Visual representation of the output:
-
 
 
 
@@ -124,8 +148,59 @@ Table #5 Station List with its active dates
 
 
 
+# RESULTS OF ANALYSIS
+
+## DASHBOARD
+Note: To access the interactive Tableau Dashboard click on the following link: <https://public.tableau.com/views/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link>.
+
+With the created tables, we used tableau tool to develop visual content to help us uncover the rationality of bike riders. 
+
+With our first visual we uncovered the following:
+
+### Number of trips by registered and casual riders
+When crossing the number of trips done by both registered and casual riders we got the following visual:
+
+![image](Image/Membershi_Trip_overtime.png)
+
+As it can be seen, indeed the mayority of bike trips have been taken by member riders (registered) than by casual ones. This observation is a very predictive pattern considering that by thinking of 'membership' already speaks of a very loyal and frequent user audience.
+
+Also, the 'member' type ratio increased steadily until 2019. This is also a predictive behaviour considering that year 2020, in the early months, was struck by the covid 19 pandemic.
+
+Lastly, this visual also shows a predictive behaviour that is a low registry of bike rides during the 1st and 4th Quarters of the year. These timeframe corresponds to the winter months.
+
+
+### Stations per member and casual users
+Our second visual crossed the stations of the bike service per type of member.
+
+![image](Image/Membership_by_station.png)
+
+As the dashboard shows, the stations with greater 'casual' users are those located closest to Points of Interest, such as the national mall, white house, tidal basin and 14th St. This is a predictive behavior as tourists would be less likely to be interested in obtaining a membership of a service that, once they fly back home, will not use again.
+
+Secondly, the dasbhboard shows that stations with greater 'member' type of users are found closest to the corporate hubs, such as Union Station, Dupont Circle, Massachussets avenue, Rhode Island Avenue, Pennsylvania Avenue, Logan Circle.
+
+An additional aspect that we noticed is that stations that show a greater commute advantage showed higher numbers of 'member' riders. 
+This prediction was shown accurate when looking at the station located in 15th St & P. The station is located in a convenient city route which (1) counts with a dedicated bike lane and (2) connects conveniently Columbia Heights with dowtown (H Street) therefore being a strategic commute route.
+
+
+### 'Member' type by weekday and weekend ratio
+A third visual crossed 'member' type by weekday and weekend ratio:
+
+![image](Image/Membership_Ratio_byDayofWeek.png)
+
+This visual also confirmed the rationality of riders' choice by showing that 'member' users use up to 80-85% more the service during the week than on the weekend, which falls to a 64-65%.
+
+This is also a predictive behavior as, if 'member' type riders use the service more for commute and transportation to work, the weekends will certainly show a downfall in usage as those are not working days.
+
+A takeway from this visual is that eventhough on weekends, the bike service is still the prefered means of transportation, even for those with a permanent residency in the city.
+
+Because of time constraint we were no longer able to dive deeper into this visual however, the team suggests the following analysis in future future:
+
+1. Evaluate how number of trips change by staion depending on the day of the week (Weekday or Weekend) and
+2. Analyze how the time of day may affect the overall trip occurence and the ratio of 'Member' type rider.
+
 
 ## MACHINE LEARNING
+
 In the machine learning part of our project, we try to predict future growth of bikesharing in DC. Using timeseries data and ARIMA model the project performs trend analysis and predict future prospect of the bike sharing.
 This project tries to achive two main goals in this time series analysis. First, it identifies the sequence of observations , and second, predict the future values of the the timeseries univeriate variable(**Number of Trips**).
 
@@ -191,47 +266,6 @@ Part 4: Modeling/Forecasting
 
 Part 5: Evaluate/Improve Forecasting/Predictions 
 
-## Database Integration
 
-By looking into our multiple CSV files, after cleaning the same and organizing the raw data extracted from the capital bike share website, we established five tables to integratd our database: 
 
-![Final_ERD](https://user-images.githubusercontent.com/78656720/126044898-bf43e200-e51a-45a5-83e4-865fc1d466df.png)
-
-These five tables were loaded into a PostgerSQL database. While working on the data analysis we also extracted different tables using SQL join query. Looking at the image below we show an example of a table created by "Inner join" from our *station_list* and *station_list_active*.
-
-![Inner_Join](https://user-images.githubusercontent.com/78656720/126045190-2021a9e1-b07f-40b8-9c1a-0a5cddf2b1ea.png)
-
-## DASHBOARD
-The interactive Tableau Dashboard is available at the following link: <https://public.tableau.com/views/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link>.
-
-Below are the explanations and screenshots of key visualizations.
-
-### Visualization of Trip number change overtime by Member or Casual users
-
-Observations:
-1. The majority of trips have been taken by 'Member' users. 
-2. The trend of increase in 'Member' user ratio is sustained until 2019
-3. In general Q1 and Q4 experience lower bike trips overall
-
-![image](Image/Membershi_Trip_overtime.png)
-
-### Visualization of Station and Member or Casual Users
-
-Observations:
-1. We see higher ratio of 'Casual' users at the stations located near Point of interest suchs as Lincoln Memorial, Museums, White House, etc...
-2. The 'Member' users are often starting their travel near Union Station, Dupont Circle, Mass Ave, Rhode Island Ave, Pennsylvania Ave, etc...
-
-![image](Image/Membership_by_station.png)
-
-### Visualizations of 'Member' user Ratio by Weekday
-
-Observations:
-1. The ratio of trips done by 'Member' users in weekday is 80-85%
-2. The ratio of trips done by 'Member' users in weekday is 64-65%
-
-![image](Image/Membership_Ratio_byDayofWeek.png)
-
-Future visualization ideas:
-
-1. Evaluate how number of trips changes by staion depends on Weekday or Weekend
-2. Analyze how time of day may affect the overall trip occurence and the ratio of 'Member' user.
+## RECOMMENDATIONS FOR FUTURE ANALYSIS
