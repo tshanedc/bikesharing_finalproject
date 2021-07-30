@@ -1,16 +1,15 @@
 # RESULTS OF ANALYSIS
 
 ## DASHBOARD
-Note: To access the interactive Tableau Dashboard click on the following link: 
+Note: To access the interactive Tableau Dashboard click on the following links: 
 
-[link to Tableau Dashboard_1](https://public.tableau.com/app/profile/takuma.koide/viz/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?publish=yes)
+[link to Tableau Dashboard_1 - Public Bike Sharing Project: Loation vs. Membership](https://public.tableau.com/app/profile/takuma.koide/viz/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?publish=yes)
 
-[link to Tableau Dashboard_2](https://public.tableau.com/app/profile/takuma.koide/viz/PublicBikeSharingProjectLoationvs_Membership/Prevs_PostPublicBikeSharingServiceTripTrend)
+[link to Tableau Dashboard_2 - Pre vs. Post Bike Sharing Service Trip Trends](hhttps://public.tableau.com/app/profile/takuma.koide/viz/PublicBikeSharingProjectPreandPostCovidComparisonofBikeTrips/Prevs_PostPublicBikeSharingServiceTripTrend?publish=yes)
 
 With the created tables, we used tableau tool to develop visual content to help us uncover the rationality of bike riders. 
 
 With our first visual we uncovered the following:
-
 
 ### Stations per member and casual users
 Our first visual crossed the stations of the bike service per type of member.
@@ -38,21 +37,18 @@ Lastly, this visual also shows a predictive behaviour that is a low number of bi
 
 
 
+### Pre-Covid and Post-Covid Bike Users Trend
+The third visuals compared the change in both bike ride trends and the ratio of member usage between Pre-Covid and Post-Covid:
 
-### 'Member' type by weekday and weekend ratio
-A third visual crossed 'member' type by weekday and weekend ratio:
+![image](Image/pre_covid_map.png)
 
-![image](Image/Membership_Ratio_byDayofWeek.png)
+![image](Image/post_covid_map.png)
 
-This visual also confirmed the rationality of riders' choice by showing that 'member' users use up to 80-85% more the service during the week than on the weekend, which falls to a 64-65%.
+These visuals also confirmed the rationality of riders' choice by showing that 'member' users use up to 80-85% more the service during the week than on the weekend, which falls to a 64-65%.
 
 This is also a predictive behavior as, if 'member' type riders use the service more for commute and transportation to work, the weekends will certainly show a downfall in usage as those are not working days.
 
 A takeway from this visual is that eventhough on weekends, the bike service is still the prefered means of transportation, even for those with a permanent residency in the city.
 
 Because of time constraint we were no longer able to dive deeper into this visual however, the team suggests the following analysis in future:
-
-1. Make the analysis on identifying the trend based on time of the day to further work on segmentation of users.
-2. 
-
 
