@@ -6,7 +6,7 @@ Note: To access the interactive Tableau Dashboard click on the following links:
 [link to Tableau Dashboard_1 - Public Bike Sharing Project: Loation vs. Membership](https://public.tableau.com/app/profile/takuma.koide/viz/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?publish=yes)
 
 
-[link to Tableau Dashboard_2 - Pre vs. Post Bike Sharing Service Trip Trends](hhttps://public.tableau.com/app/profile/takuma.koide/viz/PublicBikeSharingProjectPreandPostCovidComparisonofBikeTrips/Prevs_PostPublicBikeSharingServiceTripTrend?publish=yes)
+[link to Tableau Dashboard_2 - Public Bike Sharing Project: Pre vs. Post Bike Sharing Service Trip Trends](https://public.tableau.com/app/profile/takuma.koide/viz/PublicBikeSharingProjectPreandPostCovidComparisonofBikeTrips/Prevs_PostPublicBikeSharingServiceTripTrend?publish=yes)
 
 With the created tables, we used tableau tool to develop visual content to help us uncover the rationality of bike riders. 
 
@@ -32,11 +32,7 @@ When crossing the number of trips done by both registered and casual riders we g
 
 As it can be seen, indeed the mayority of bike trips have been taken by member riders (registered) than by casual ones. This observation is a very predictive pattern considering that by thinking of 'membership' already speaks of a very loyal and frequent user audience.
 
-Also, the 'member' type ratio increased steadily until 2019. This is also a predictive behaviour considering that year 2020, in the early months, was struck by the covid 19 pandemic.
-
-Lastly, this visual also shows a predictive behaviour that is a low number of bike rides during the 1st and 4th Quarters of the year. These timeframe corresponds to the winter months.
-
-
+In a glance, the 'member' type ratio increased steadily until 2019. However, the ratio between member and casual drastically reverses in 2020 due to the covid 19 pandemic. We will reassess this impact in the map again to identify the most current behavior of users.
 
 ### Pre-Covid and Post-Covid Bike Users Trend
 The third visuals compared the change in both bike ride trends and the ratio of member usage between Pre-Covid and Post-Covid:
@@ -45,11 +41,15 @@ The third visuals compared the change in both bike ride trends and the ratio of 
 
 ![image](Image/post_covid_map.png)
 
-These visuals also confirmed the rationality of riders' choice by showing that 'member' users use up to 80-85% more the service during the week than on the weekend, which falls to a 64-65%.
+These visuals shows that not only overall volume of bike ride reduced around corporate hubs by change in the data point size, the overall ratio of 'member' usage converted to 'casual' as the color shifted to blue from red.
 
-This is also a predictive behavior as, if 'member' type riders use the service more for commute and transportation to work, the weekends will certainly show a downfall in usage as those are not working days.
+This is also a predictive behavior as, if 'member' type riders use the service more for commute and transportation to work, we would see less riding by those users when Covid was focing many to work remotely (or overall workforce was declined).
 
-A takeway from this visual is that eventhough on weekends, the bike service is still the prefered means of transportation, even for those with a permanent residency in the city.
+Also, when commuting is not consistent, those 'member' users could have turn themselves into 'casual' users based on less frequent need of riding a bike. 
 
-Because of time constraint we were no longer able to dive deeper into this visual however, the team suggests the following analysis in future:
+There are three takeaways from these visuals:
+
+1. The 'member type' of bike users are largely depended on the location of bike stations and whether Weekday or Weekend that they are riding. Thus we can identify that purpose of their bike ride is either for commuting or sightseeing.
+2. However, such trend was impacted by Covid that overall trip ride and 'member' usage were declined due to nnecessity of consistent commuting. Rather, we see increase in 'casual' rider in 2020 for both corporate hubs and point of interest.
+3. Based on the above points, PBS must reasses the popular bike stations to focus their resource and adjust their membership plan price to re-convert the 'casual' riders back to 'member' riders.
 
