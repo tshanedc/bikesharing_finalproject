@@ -5,6 +5,7 @@ Note: To access the interactive Tableau Dashboard click on the following links:
 
 [link to Tableau Dashboard_1 - Public Bike Sharing Project: Loation vs. Membership](https://public.tableau.com/app/profile/takuma.koide/viz/PublicBikeSharingProjectLoationvs_Membership/Loc_Station_ratio?publish=yes)
 
+
 [link to Tableau Dashboard_2 - Pre vs. Post Bike Sharing Service Trip Trends](hhttps://public.tableau.com/app/profile/takuma.koide/viz/PublicBikeSharingProjectPreandPostCovidComparisonofBikeTrips/Prevs_PostPublicBikeSharingServiceTripTrend?publish=yes)
 
 With the created tables, we used tableau tool to develop visual content to help us uncover the rationality of bike riders. 
