@@ -195,8 +195,10 @@ In a glance, the 'member' type ratio increased steadily until 2019. However, the
 ### Pre-Covid and Post-Covid Bike Users Trend
 The third visuals compared the change in both bike ride trends and the ratio of member usage between Pre-Covid and Post-Covid:
 
+#### Pre-Covid:
 ![image](Image/pre_covid_map.png)
 
+#### Post-Covid:
 ![image](Image/post_covid_map.png)
 
 These visuals shows that not only overall volume of bike ride reduced around corporate hubs by change in the data point size, the overall ratio of 'member' usage converted to 'casual' as the color shifted to blue from red.
