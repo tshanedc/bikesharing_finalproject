@@ -260,33 +260,45 @@ Using the same rules of P-value we can clearly see our series attained stationar
 
 
 
+## PROPHET MODEL:
 
-Prophet Model:
-Part 1: Preprocessing (Completed)
-1) Read in 'all_bike' csv
-- Change Trip_number col to lowercase
-1) Read in 'bike_type' csv
-- Encode bike types
-- Rename cols
-1) Merge 'all_bike' and 'bike_type'
-2) Drop unnecessary cols
-3) Change 'startdate' from object to datetime
-4) Set index to 'startdate'
-
-Part 2: Split Train_Test
-
-Part 3: Check for Stationarity
-
-Part 4: Modeling/Forecasting
-
-Part 5: Evaluate/Improve Forecasting/Predictions 
+We chose to use the Facebook Prophet model because it is also a time series forecasting algorithm and because it easily handles the weekly and yearly seasonality contained in our data. We used the Prophet model to predict 'Member' rider growth for the next 36 months.
 
 
-![Mair1](Mair1.png)
+### Preprocessing
+
+Once the 'membertype' target column was encoded for 'member'  and 'casual' riders, the 'casual' riders were dropped  the 'startdate' column was converted from an object to a datatime data type. Then the columns were renamed to 'ds' and 'y' required for the Prophet model.
+
+
+![image](Image/prophet_preprocessing1.png)
+
+The 28 million datapoints of our dataframe were too many to run on any of Google Colab's free server runtime types, so we binned the observations by week. This reduced the dataframe to a more manageable 486 datapoints.
+
+
+![image](Image/prophet_preprocessing2.png)
+
+### Train and Fit the Model: Forecast
+
+Since the last two years were atypical, due to COVID19 restrictions, and didn't represent the previous years' rider behavior, we limited our model to using the rider data from 2010 - 2019. 
+
+We created the train dataset with datapoints from 2010-2017 and test dataset to 2018-2019.
+
+![image](Image/prophet_train_test.png)
+
+When making predictions with Prophet, we're required to create a special object called 'future_data' which is a Pandas DataFrame with a single column (ds) that includes all datetime within the training data, plus the additional periods from the 'test' split. Our time series has a clear yearly cycle.
+
+![image](Image/prophet_weekly_forecast.png)
 
 
 
-![Mair2](Mair2.png)
+### Trend and Seasonality
+
+Prophet also returns components of our forecasts which show how weekly and yearly patterns contribute to the forecasted values.
+
+
+![image](Image/prophet_weekly_trend.png)
+
+
 
 
 ## RECOMMENDATIONS FOR FUTURE ANALYSIS
