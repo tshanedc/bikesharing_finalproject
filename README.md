@@ -7,15 +7,26 @@ Team 5: Thomas Shane, Paola Escamilla, Takuma Koide, Habtamu Tikuye, Mair Manson
 An analysis of Capital Bike Share service in Washington D.C.
 
 ### Reasons for Topic Selection
-The bike sharing service has become increasingly popular in the main cities of the U.S. The possibility of mobilizing without schedule and traffic constraints appeals to the general public. This service also offers different payment tiers that adjust conveniently to the riders’ income. 
 
-The innovation focus that the service brings to the way we understand and see transportation became of interest to the team members. By engaging in conversations between ourselves we came to creative ideas, possibilities and hypotheses that caught our complete attention. We discussed income, gender, age and security however, as our analysis developed we uncovered that the riders of the bike sharing service, and the service as such, follows a strictly predictive behavior.
+Intially, we were interested in exploring the bike sharing program for its obvious social and environmental benefits such as less traffic congestion, lower CO2 emmission, improving resident mobility and accessibility, bettering resident health outcomes, and reducing commute delays for users of the local transportation system to expand system. However, we quickly realized the first hurdle to growing the bike sharing programs was financial investment from private investors in partnership with local and federal government agencies. We pivoted to offering a deeper analysis to investors and the local government agencies to undersand the growing membership trends of public bike sharing rider behavior in Washington DC as a way to encourage further investments and suggesting ways to capitalize on the financial benefits of the growing rider market.
 
-All the hypotheses that we came to, such as: (1) Is the service, through its cost, excluding low income riders from usage? (2) Is there a gender bias in the service? (3) Are bike stations less likely to be opened in neighbourhoods considered risky/insecure? and (4) Are the owners of the service disregarding the growth opportunities behind the “age” feature?, slowly faded from our analysis by uncovering, through the data retrieved, that the riders strongly behave as one would expect them to behave.
+Advantages of investing in bike sharing programs follow a three-pronged economic model:
 
-Knowing that a rational actor is an individual who uses rational calculations to make choices and achieve their own personal objectives, he or she will use rational calculations and choices, to satisfy their self-interest and receive the greatest benefit and satisfaction, given the limited option they have available.
+#### 1. Data Mining
+- use the interest on the reveue collected to invest
+- member data has high commercial value to retail businesses, restaurants, car sales
+- member data has high value to local governments for urban planning and management
+- sell users' riding behavior data captured by app and GPS complement datasets collected by taxi and public transportation systems
 
-With this introduction to the team’s thinking process, we present the steps to our analysis to sustain our hypotheses:
+#### 2. Advertising
+- advertising revenue from ads on physical bike, the app used to locate and unlock the bike
+
+#### 3. Profitability
+- Interest earned on Membership deposits is a substantial income generating asset with which to invest
+- Huge deposit pool each day from Casual riders
+
+
+We also pivoted away from pursuing and tracking data sources for income, gender, age, and race to focus on the rider and location trends that are already found in the Capital BikeShare data which were central to our hypothesis that understanding the current rider makeup and behavior was a more than sufficient means to suggest recommendations for where growth opportunities existed in Washington, DC. We also discovered that the exploration of how the riders behaved during the COVID19 shutdown would provide beneficial information to investors for how to prepare for future downturns by being able to quickly adjust their marketing and inventory strategies to mitigate losses and perhaps even grow during a downturn.
 
 ### Description of Source Data
 Our work used secondary data already collected by the capital bike share service through their website: https://www.capitalbikeshare.com/system-data. 
@@ -29,13 +40,20 @@ It must be highlighted that some months had to be disregarded from the analysis 
 In total, our final dataset was created by taking a total of 66 CSV files with over 26,000,000 rows and 8 columns each.
 
 ### Analysis Question
-As previously introduced, our analysis question is **“Are Capital Bike Share riders rational actors?”**.
+Our analysis questions are:
 
-To sustain, or refute, our hypothesis the analysis dived into:
+ - Are there rider behaviors we can observe from the ride iniatiation location? 
+
+ - Does weekday or weekend have any effect on riders behavior and their decision to become a member?
+
+ - How have above behaviors changed rates of membership and ridership due to COVID19?
+
+To sustain or refute our hypothesis, the analysis dived into:
 - Total bike rides per year
 - Distribution of ‘member type’ per station
-- Time of the day and day of the week of the ride
+- 'Time of the day' and 'day of the week' of the ride
 - Location of Bike stations (lat, long)
+
 
 ### Description of Data Exploration Phase
 The data exploration phase started with a review of the websites of the known bike share services in different cities in the United States. We were able to find available data for the cities of New York, Chicago, Pittsburgh, Boston and Washington D.C. 
@@ -255,19 +273,16 @@ Prophet also returns components of our forecasts which show how weekly and yearl
 ![image](Image/prophet_weekly_trend.png)
 
 
-
 ## RECOMMENDATIONS FOR FUTURE ANALYSIS
-The data crossed and visualized confirmed our hypothesis of predictability of the service and the rider's behavior.
+Exploring and visualizing the data confirmed our hypothesis *** that overall bike usage will continue to grow and that there are many ways to incentivize casual riders to convert to become a bike sharing member  ***. 
 
-Plenty of hypothesis and assumptions were established for the riders and the service. However all those ideas that we thought to be rational (or were thought to have a corelation) turned out to be flawed after the analysis.
+The analysis confirms that member riders initiate trips more during weekdays than weekends, casual members explore more the 'point of interest' areas than the member riders. Riders, in general, ride less during winter than summer. 
 
-Users of the bike sharing service behave exactly the way the service would expect them to behave. They behave rationaly depending on the conditions of their surrounding. Member riders ride more during weekdays than weekends, casual members explore more the 'point of interest' areas than the member riders, riders, in general, ride less during winter than summer and COVID pandemic brought a valley in the usage graphs. 
+A hypothesis that corelating annual growth of memberships by station location could reasonably predict future stations based on locations with features such as nearby shopping, schools, restaurants and entertainment. Availability of way to locate this data from geolocation information from Google Maps and incorporate this option was difficult to explore for lack of time in this project, but could prove significant in the future.
 
-The predictability enclosed in the data makes it easier for the decision makers of the service to make solid decisions. 
+The predictability seen in the data makes it easier for the bike sharing service investors and stakeholders to make solid decisions to maintain and grow the current market. 
 
-Considering the pandemic scneario, an opportunity area for the service maximization could be:
+Considering a future pandemic scenario, from the evidence seen in the analyis of rider behavior during COVID19, investors and stakeholders can explore the establishment of a contingency plan where some resources can be saved:
 
-- Explore the establishment of a contingency plan where some resources can be saved, for example:
-- Explore the adjustment of membership costs in order to expand enrollment,
-- Explore the reduction of bike stations to ensure that (1) there is more bike availability in those most used at the moment, (2) the less used bike stations are temporarily suspended to decrease maintenance costs.
-
+- Explore the adjustment of membership costs in order to expand enrollment;
+- Explore the reduction of bike stations to ensure that: (1) there is more bike availability in those most used at the moment, (2) the less used bike stations are temporarily suspended to decrease maintenance costs.
