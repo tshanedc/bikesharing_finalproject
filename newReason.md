@@ -38,3 +38,27 @@ To sustain or refute our hypothesis, the analysis dived into:
 - Distribution of ‘member type’ per station
 - 'Time of the day' and 'day of the week' of the ride
 - Location of Bike stations (lat, long)
+
+
+********************************   REVISE ECOMMENDATIONS FOR FUTURE ANALYSIS   *************************************
+
+## RECOMMENDATIONS FOR FUTURE ANALYSIS
+Exploring and visualizing the data confirmed our hypothesis *** that overall bike usage will continue to grow and that there are many ways to incentivize casual riders to convert to become a bike sharing member  ***. 
+
+
+****Plenty of hypothesis and assumptions were established for the riders and the service. However all those ideas that we thought to be rational (or were thought to have a corelation) turned out to be flawed after the analysis.****
+
+
+The analysis confirms that member riders initiate trips more during weekdays than weekends, casual members explore more the 'point of interest' areas than the member riders. Riders, in general, ride less during winter than summer. 
+
+A hypothesis that corelating annual growth of memberships by station could potentially predict future stations based on location features such as nearby shopping, schools, restaurants and entertainment availability was difficult to investigate for lack of time, but could prove significant in the future.
+
+
+The predictability seen in the data makes it easier for the bike sharing service investors and stakeholders to make solid decisions to maintain and grow the current market. 
+
+Considering a pandemic scenario, the evidence seen in the analyis of rider behavior during COVID19, suggests an opportunity area for the service maximization could be:
+
+- Explore the establishment of a contingency plan where some resources can be saved, for example:
+- Explore the adjustment of membership costs in order to expand enrollment,
+- Explore the reduction of bike stations to ensure that: (1) there is more bike availability in those most used at the moment, (2) the less used bike stations are temporarily suspended to decrease maintenance costs.
+
