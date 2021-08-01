@@ -51,9 +51,8 @@ A hypothesis that corelating annual growth of memberships by station location co
 
 The predictability seen in the data makes it easier for the bike sharing service investors and stakeholders to make solid decisions to maintain and grow the current market. 
 
-Considering a pandemic scenario, from the evidence seen in the analyis of rider behavior during COVID19, it suggests an opportunity area for the service maximization could be:
+Considering a future pandemic scenario, from the evidence seen in the analyis of rider behavior during COVID19, investors and stakeholders can explore the establishment of a contingency plan where some resources can be saved:
 
-- Explore the establishment of a contingency plan where some resources can be saved, for example:
-- Explore the adjustment of membership costs in order to expand enrollment,
+- Explore the adjustment of membership costs in order to expand enrollment;
 - Explore the reduction of bike stations to ensure that: (1) there is more bike availability in those most used at the moment, (2) the less used bike stations are temporarily suspended to decrease maintenance costs.
 
