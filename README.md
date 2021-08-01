@@ -71,5 +71,5 @@ number_of_members	| The number of times that "Member' users used bikes.
 number_of_casuals	| The number of times that "Casual' users used bikes.
 trip_total	| The number of times that both 'Member' and 'Casual' users used bikes.
 status 	| Labels whether te data refers to `pre_covid` as before the COVID19 or `post_covid` as after the COVID19 pandemic started. In this analysis, the data from 2019/01-2019/12 are grouped as **pre-COVID** and that from 2020/01-2021/05 as **post-Covid**.
-WEEKDAY	| the column binary labels **0** 
+WEEKDAY	| the column binary labels **0** as weekday and **1** as weekend
 
