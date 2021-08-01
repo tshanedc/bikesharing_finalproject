@@ -9,7 +9,7 @@ Advantages of investing in bike sharing programs follow a three-pronged economic
 - member data has high commercial value to retail businesses, restaurants, car sales
 - member data has high value to local governments for urban planning and management
 - sell users' riding behavior data captured by app and GPS complement datasets collected by taxi and public transportation systems
-- 
+
 #### 2. Advertising
 - advertising revenue from ads on physical bike, the app used to locate and unlock the bike
 
