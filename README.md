@@ -37,18 +37,39 @@ Table #1 all_bikes_trips
 
 ![image](https://user-images.githubusercontent.com/78698456/125867516-cb3773d8-bef6-4fa0-bc48-196176f0c837.png) 
 
-Table #4 Station List
+Table #4 station_list
 
 ![image](Image/4_station_list_table.png)
 
-Table #9 Ratio df
+Table #9 ratio_df 
 
 ![image](Image/9_ratio_df.png)
 
-Table #10 Dayofweek Ratio
+Table #10 dayofweek_ratio
 
 ![image](Image/10_dayofweek_ratio.png)
 
-Table #15 Merge Covid
+Table #15 merge_covid
 
 ![image](Image/15_merge_covid.png)
+
+Column Term | Definition
+------------ | -------------
+Trip_number	| an arbitrary sequential number assigned to each bike trip in order of `startdate`.
+startstationnumber		| the station id number of a bike station that a trip is initiated.
+endstationnumber			| the station id number of a bike station that a trip is ended.
+startdate		| the time that bike trips has started in YYYY-MM-DD HH:MM:SS format.
+enddate	| the time that bike trips has ended in YYYY-MM-DD HH:MM:SS format.
+membertype	| the binary column that tells whether the bike trip was done by 'Member' user signed up in the membership or 'Casual' users who rented a bike without signing up the memberhsip.  
+weekday		| labels which day of the week the bike trip took place.
+station_id		| the same value as `startstationnumber` that identifies specific bike station.
+station_name| The name of bike station. Each station name is paired with an unique `station_id`.
+lat	| The latitude of a specific bike station.
+lng | The longitude of a specific bike station.
+ratio		| The ratio of bike trip done by 'Member' users over the all trips took place there.
+number_of_members	| The number of times that "Member' users used bikes.
+number_of_casuals	| The number of times that "Casual' users used bikes.
+trip_total	| The number of times that both 'Member' and 'Casual' users used bikes.
+status 	| Labels whether te data refers to `pre_covid` as before the COVID19 or `post_covid` as after the COVID19 pandemic started. In this analysis, the data from 2019/01-2019/12 are grouped as **pre-COVID** and that from 2020/01-2021/05 as **post-Covid**.
+WEEKDAY	| the column binary labels **0** 
+
