@@ -8,7 +8,7 @@ An analysis of Capital Bike Share service in Washington D.C.
 
 ### Reasons for Topic Selection
 
-Intially, we were interested in exploring the bike sharing program for its obvious social and environmental benefits such as less traffic congestion, lower CO2 emmission, improving resident mobility and accessibility, bettering resident health outcomes, and reducing commute delays for users of the local transportation system to expand system. However, we quickly realized the first hurdle to growing the bike sharing programs was financial investment from private investors in partnership with local and federal government agencies. We pivoted to offering a deeper analysis to investors and the local government agencies to undersand the growing membership trends of public bike sharing rider behavior in Washington DC as a way to encourage further investments and suggesting ways to capitalize on the financial benefits of the growing rider market.
+Intially, we selected analyzing the bike sharing program to explore its social and environmental benefits such as potential impact to lessen traffic congestion and lower CO2 emission, improving resident mobility and accessibility, bettering resident health outcomes, and reducing commute delays for users of the local transportation system. However, we quickly realized the first hurdle to growing the bike sharing programs was financial investment from private investors in partnership with local and federal government agencies. We pivoted to offering a deeper analysis to investors and the local government agencies to undersand the growing membership trends of public bike sharing and rider behavior in Washington DC as a way to encourage further investments and suggesting ways to capitalize on the financial benefits of the expanding rider market.
 
 Advantages of investing in bike sharing programs follow a three-pronged economic model:
 
@@ -49,6 +49,7 @@ Our analysis questions are:
  - How have above behaviors changed rates of membership and ridership due to COVID19?
 
 To sustain or refute our hypothesis, the analysis dived into:
+
 - Total bike rides per year
 - Distribution of ‘member type’ per station
 - 'Time of the day' and 'day of the week' of the ride
