@@ -275,7 +275,7 @@ Prophet also returns components of our forecasts which show how weekly and yearl
 
 
 ## RECOMMENDATIONS FOR FUTURE ANALYSIS
-Exploring and visualizing the data confirmed our hypothesis *** that overall bike usage will continue to grow and that there are many ways to incentivize casual riders to convert to become a bike sharing member  ***. 
+Exploring and visualizing the data confirmed our hypothesis that overall bike usage will continue to grow and that there are many ways to incentivize casual riders to convert to become a bike sharing member. 
 
 The analysis confirms that member riders initiate trips more during weekdays than weekends, casual members explore more the 'point of interest' areas than the member riders. Riders, in general, ride less during winter than summer. 
 
