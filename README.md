@@ -233,6 +233,7 @@ Using the same rules of P-value we can clearly see our series attained stationar
 
 ![Log_movingaverage](https://user-images.githubusercontent.com/78656720/126905518-3bfe4056-105c-4d25-b7d6-e3764073b324.PNG)
 
+This project takes membership status as a variable of interest and it is a classified variable(*member* and *caslual*). Therfore, we have moved to using a prophet model instead of ARIMA to forcast how membership status has behaved during the pandemic season and how significant it is for the investors decision.
 
 
 ## PROPHET MODEL:
