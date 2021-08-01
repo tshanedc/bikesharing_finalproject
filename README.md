@@ -13,8 +13,6 @@ The innovation focus that the service brings to the way we understand and see tr
 
 All the hypotheses that we came to, such as: (1) Is the service, through its cost, excluding low income riders from usage? (2) Is there a gender bias in the service? (3) Are bike stations less likely to be opened in neighbourhoods considered risky/insecure? and (4) Are the owners of the service disregarding the growth opportunities behind the “age” feature?, slowly faded from our analysis by uncovering, through the data retrieved, that the riders strongly behave as one would expect them to behave.
 
-With this said, our analysis question transformed to **“Are Capital Bike Share riders rational actors?”**
-
 Knowing that a rational actor is an individual who uses rational calculations to make choices and achieve their own personal objectives, he or she will use rational calculations and choices, to satisfy their self-interest and receive the greatest benefit and satisfaction, given the limited option they have available.
 
 With this introduction to the team’s thinking process, we present the steps to our analysis to sustain our hypotheses:
@@ -266,8 +264,6 @@ We chose to use the Facebook Prophet model because it is also a time series fore
 
 
 ### Preprocessing
-
-Once the 'membertype' target column was encoded for 'member'  and 'casual' riders, the 'casual' riders were dropped  the 'startdate' column was converted from an object to a datatime data type. Then the columns were renamed to 'ds' and 'y' required for the Prophet model.
 
 
 ![image](Image/prophet_preprocessing1.png)
