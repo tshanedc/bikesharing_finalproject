@@ -265,15 +265,16 @@ We chose to use the Facebook Prophet model because it is also a time series fore
 
 ### Preprocessing
 
+The 'membertype' target column was encoded for the 'member' and 'casual' riders from strings to numerical data for the algorithm to understand the two categories. Then the 'casual' riders were dropped, and the 'startdate' column was converted from an object to a datatime data type. The columns were then renamed because Prophet requires the use of specific column names; 'ds' for dates and 'y' for the target variable we're predicting.
 
 ![image](Image/prophet_preprocessing1.png)
 
-The 28 million datapoints of our dataframe were too many to run on any of Google Colab's free server runtime types, so we binned the observations by week. This reduced the dataframe to a more manageable 486 datapoints.
+The 22 million datapoints of our dataframe were too many to run on any of Google Colab's free server runtime types, so we binned the observations from a daily, minute-by-minute tally to weekly summed totals. This reduced the dataframe to a more manageable 486 datapoints.
 
 
 ![image](Image/prophet_preprocessing2.png)
 
-### Train and Fit the Model: Forecast
+### Train and Fit the Model
 
 Since the last two years were atypical, due to COVID19 restrictions, and didn't represent the previous years' rider behavior, we limited our model to using the rider data from 2010 - 2019. 
 
@@ -281,19 +282,19 @@ We created the train dataset with datapoints from 2010-2017 and test dataset to 
 
 ![image](Image/prophet_train_test.png)
 
-When making predictions with Prophet, we're required to create a special object called 'future_data' which is a Pandas DataFrame with a single column (ds) that includes all datetime within the training data, plus the additional periods from the 'test' split. Our time series has a clear yearly cycle.
+### Forecast and Plot
+
+When making predictions with Prophet, we're required to create a special object called 'future_data' which is a Pandas DataFrame with a single column (ds) that includes all datetimes within the training data, plus the additional periods from the 'test' split. Our time series has a clear yearly cycle with summer months higher member rides and tapering off in the winter months.
 
 ![image](Image/prophet_weekly_forecast.png)
 
 
-
 ### Trend and Seasonality
 
-Prophet also returns components of our forecasts which show how weekly and yearly patterns contribute to the forecasted values.
+Prophet also returns components of our forecasts which show how weekly and yearly patterns contribute to the forecasted values. The first plot shows that member weekly rides has been gradually increasing over time. Although the overall growth trend has been gradual, it has risen steadily year over year. The weekly trend shows higher weekend usage suggesting that members may not be using bikes for commuting or errands and more for recreation. The seasonal yearly trend shows peak member usage in the spring and fall seasons following Washington, DC's most moderate weather temperatures during those times.
 
 
 ![image](Image/prophet_weekly_trend.png)
-
 
 
 
