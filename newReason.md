@@ -1,6 +1,6 @@
 ### Reasons for Topic Selection
 
-Intially, we were interested in exploring the bike sharing program for its obvious social and environmental benefits such as less traffic congestion, lower CO2 emmission, better health outcomes and reducing wait times for local transportation delays. However, we quickly realized the first hurdle to growing the bike sharing programs was financial investment from private investors. We pivoted to to offering a deeper analysis to investors and the local government agencies of the growing membership trends of Public Bike Sharing Services in Washington DC as a way to encourage further investments by highlighting ways to capitalize on the financial benefits of the growing rider market.
+Intially, we were interested in exploring the bike sharing program for its obvious social and environmental benefits such as less traffic congestion, lower CO2 emmission, better health outcomes and reducing wait times for local transportation delays. However, we quickly realized the first hurdle to growing the bike sharing programs was financial investment from private investors. We pivoted to offering a deeper analysis to investors and the local government agencies to undersand the growing membership trends of public bike sharing rider behavior in Washington DC as a way to encourage further investments and suggesting ways to capitalize on the financial benefits of the growing rider market.
 
 Advantages of investing in bike sharing programs follow a three-pronged economic model:
 
@@ -18,6 +18,6 @@ Advantages of investing in bike sharing programs follow a three-pronged economic
 - Huge deposit pool each day from Casual riders
 
 
-We also pivoted away from pursuing and tracking data sources for income, gender, age, and race to focus on the rider and location trends that are already in the Capital BikeShare data that was central to the hypothesis that understanding the current rider makeup and behavior was more than adequate to suggest recommendations for where growth opportunities existed in Washington, DC. We also discovered that the exploration of how the riders behaved during the COVID19 shutdown could help investors prepare for future downturns by adjusting their marketing and inventory strategies to mitigate losses and perhaps even grow during a downturn.
+We also pivoted away from pursuing and tracking data sources for income, gender, age, and race to focus on the rider and location trends that are already found in the Capital BikeShare data which were central to our hypothesis that understanding the current rider makeup and behavior was a more than sufficient means to suggest recommendations for where growth opportunities existed in Washington, DC. We also discovered that the exploration of how the riders behaved during the COVID19 shutdown would provide beneficial information to investors for how to prepare for future downturns by being able to quickly adjust their marketing and inventory strategies to mitigate losses and perhaps even grow during a downturn.
 
 Our analysis revealed that 
