@@ -73,6 +73,10 @@ After identifying and organizing the raw data extracted from the capital bike sh
 
 ![Final_ERD](https://user-images.githubusercontent.com/78656720/126044898-bf43e200-e51a-45a5-83e4-865fc1d466df.png)
 
+These five tables were loaded into a PostgerSQL database. In the image below an example is shown of a table created by "Inner join" from our *station_list* and *station_list_active*.
+
+![Inner_Join](https://user-images.githubusercontent.com/78656720/126045190-2021a9e1-b07f-40b8-9c1a-0a5cddf2b1ea.png)
+
 Based on the above ERD, we continued on transforming datasets further to suit them to visuzalization and Machine Learning processing. The created csv files are available in Google Drive as link below:
 
 [link to Google Drive](https://drive.google.com/drive/folders/1RhGPE1DgXtZ2eRaMr09bNaQkYnRQHske)
